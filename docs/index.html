@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Survey Data Analysis &amp; Survey Experiments</title>
+  <meta name="description" content="Advanced Survey Data Analysis &amp; Survey Experiments">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="davidjbarney/bookdown-stata" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  
+  
+  
+
+<meta name="author" content="Brian F. Schaffner">
+
+
+<meta name="date" content="2018-02-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="background-on-survey-design-analysis.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced Survey Data Analysis & Survey Experiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-this-course"><i class="fa fa-check"></i><b>1.1</b> About this Course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html"><i class="fa fa-check"></i><b>2</b> Background on Survey Design &amp; Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#background-readings"><i class="fa fa-check"></i><b>2.1</b> Background Readings</a></li>
+<li class="chapter" data-level="2.2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#analysis-refresher-logit"><i class="fa fa-check"></i><b>2.2</b> Analysis Refresher – Logit</a></li>
+<li class="chapter" data-level="2.3" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#ordinal-logit-probit"><i class="fa fa-check"></i><b>2.3</b> Ordinal Logit / Probit</a></li>
+<li class="chapter" data-level="2.4" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#multinomial-logit"><i class="fa fa-check"></i><b>2.4</b> Multinomial Logit</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html"><i class="fa fa-check"></i><b>3</b> Approaches to Sampling</a><ul>
+<li class="chapter" data-level="3.1" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#background-readings-1"><i class="fa fa-check"></i><b>3.1</b> Background Readings</a></li>
+<li class="chapter" data-level="3.2" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#sampling-in-stata"><i class="fa fa-check"></i><b>3.2</b> Sampling in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html"><i class="fa fa-check"></i><b>4</b> Constructing and Using Design Weights</a><ul>
+<li class="chapter" data-level="4.1" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#background-readings-2"><i class="fa fa-check"></i><b>4.1</b> Background Readings</a></li>
+<li class="chapter" data-level="4.2" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#using-weights-in-stata"><i class="fa fa-check"></i><b>4.2</b> Using Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Constructing and Using Post-Stratification Weights</a><ul>
+<li class="chapter" data-level="5.1" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html#creating-post-stratification-weights-in-stata"><i class="fa fa-check"></i><b>5.1</b> Creating Post-Stratification Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="item-scaling.html"><a href="item-scaling.html"><i class="fa fa-check"></i><b>6</b> Item Scaling</a><ul>
+<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#background-readings-3"><i class="fa fa-check"></i><b>6.1</b> Background Readings</a></li>
+<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#scaling-items-in-stata"><i class="fa fa-check"></i><b>6.2</b> Scaling Items in Stata</a></li>
+<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#simple-index-using-alpha"><i class="fa fa-check"></i><b>6.3</b> Simple Index using <code>alpha</code></a></li>
+<li class="chapter" data-level="6.4" data-path="item-scaling.html"><a href="item-scaling.html#index-using-factor-analysis-factor"><i class="fa fa-check"></i><b>6.4</b> Index using Factor Analysis <code>factor</code></a></li>
+<li class="chapter" data-level="6.5" data-path="item-scaling.html"><a href="item-scaling.html#using-irt-to-create-a-scale"><i class="fa fa-check"></i><b>6.5</b> Using IRT to Create a Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing Techniques</a><ul>
+<li class="chapter" data-level="7.1" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#background-readings-4"><i class="fa fa-check"></i><b>7.1</b> Background Readings</a></li>
+<li class="chapter" data-level="7.2" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#two-approaches-to-matchingbalancing-in-stata"><i class="fa fa-check"></i><b>7.2</b> Two Approaches to Matching/Balancing in Stata</a></li>
+<li class="chapter" data-level="7.3" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.3</b> Coarsened Exact Matching</a></li>
+<li class="chapter" data-level="7.4" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#entropy-balancing"><i class="fa fa-check"></i><b>7.4</b> Entropy Balancing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html"><i class="fa fa-check"></i><b>8</b> Construction and Analysis of Panel Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#background-readings-5"><i class="fa fa-check"></i><b>8.1</b> Background Readings</a></li>
+<li class="chapter" data-level="8.2" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#analyzing-panel-data-in-stata"><i class="fa fa-check"></i><b>8.2</b> Analyzing Panel Data in Stata</a></li>
+<li class="chapter" data-level="8.3" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.3</b> Reshaping Data</a></li>
+<li class="chapter" data-level="8.4" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#simple-panel-analysis-commands"><i class="fa fa-check"></i><b>8.4</b> Simple Panel Analysis Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a><ul>
+<li class="chapter" data-level="9.1" data-path="survey-experiments.html"><a href="survey-experiments.html#background-readings-6"><i class="fa fa-check"></i><b>9.1</b> Background Readings</a></li>
+<li class="chapter" data-level="9.2" data-path="survey-experiments.html"><a href="survey-experiments.html#analyzing-and-presenting-results-from-survey-experiments"><i class="fa fa-check"></i><b>9.2</b> Analyzing and Presenting Results from Survey Experiments</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Survey Data Analysis &amp; Survey Experiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Advanced Survey Data Analysis &amp; Survey Experiments</h1>
+<h4 class="author"><em>Brian F. Schaffner</em></h4>
+<h4 class="date"><em>2018-02-23</em></h4>
+</div>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="about-this-course" class="section level2">
+<h2><span class="header-section-number">1.1</span> About this Course</h2>
+<p>This course will focus on various aspects of advanced survey design and analysis, with a particular focus at the end of the course on survey experiments. Most of our assignments and examples will utilize data from the Cooperative Congressional Election Study, a large-scale survey of Americans that has been conducted annually since 2005. I have been a co-PI on this survey project since 2010. I am also the Director (and founder) of UMass Poll, a survey organization housed at the University of Massachusetts Amherst.</p>
+<p>This course will focus heavily on “engaged” activities to help you learn approaches and techniques. For each topic, there will be an assignment that is designed to be completed in class. While most of these projects will involve analyzing existing survey data, the course will culminate with the design, implementation, and analysis of a survey experiment designed by the students in the course. I also encourage you to bring your own survey data that you wish to analyze and I can offer help with those analyses during our time in the lab.</p>
+<p>For each class meeting, I have listed some recommended background readings. I would stronlgy encourage you to do this reading before each class. Most of these readings should be easily available on-line. However, book chapters are included at the end of this packet for your convenience.</p>
+</div>
+<div id="software" class="section level2">
+<h2><span class="header-section-number">1.2</span> Software</h2>
+<p>This packet and the course instruction will primarily make use of the Stata statistical software. However, there is a parallel packet available for R users that I will make available in PDF form and which can also be found online <a href="http://www.miacosta.com/blog">here</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="background-on-survey-design-analysis.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

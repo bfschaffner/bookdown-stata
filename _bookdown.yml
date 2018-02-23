@@ -1,0 +1,6 @@
+book_filename: "advanced-survey-data-schaffner"
+chapter_name: "Chapter "
+repo: https://github.com/davidjbarney/bookdown-stata
+output_dir: docs
+clean: [packages.bib, bookdown.bbl]
+new_session: yes

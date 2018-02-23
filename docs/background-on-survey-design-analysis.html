@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Survey Data Analysis &amp; Survey Experiments</title>
+  <meta name="description" content="Advanced Survey Data Analysis &amp; Survey Experiments">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="davidjbarney/bookdown-stata" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  
+  
+  
+
+<meta name="author" content="Brian F. Schaffner">
+
+
+<meta name="date" content="2018-02-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="approaches-to-sampling.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced Survey Data Analysis & Survey Experiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-this-course"><i class="fa fa-check"></i><b>1.1</b> About this Course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html"><i class="fa fa-check"></i><b>2</b> Background on Survey Design &amp; Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#background-readings"><i class="fa fa-check"></i><b>2.1</b> Background Readings</a></li>
+<li class="chapter" data-level="2.2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#analysis-refresher-logit"><i class="fa fa-check"></i><b>2.2</b> Analysis Refresher – Logit</a></li>
+<li class="chapter" data-level="2.3" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#ordinal-logit-probit"><i class="fa fa-check"></i><b>2.3</b> Ordinal Logit / Probit</a></li>
+<li class="chapter" data-level="2.4" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#multinomial-logit"><i class="fa fa-check"></i><b>2.4</b> Multinomial Logit</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html"><i class="fa fa-check"></i><b>3</b> Approaches to Sampling</a><ul>
+<li class="chapter" data-level="3.1" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#background-readings-1"><i class="fa fa-check"></i><b>3.1</b> Background Readings</a></li>
+<li class="chapter" data-level="3.2" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#sampling-in-stata"><i class="fa fa-check"></i><b>3.2</b> Sampling in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html"><i class="fa fa-check"></i><b>4</b> Constructing and Using Design Weights</a><ul>
+<li class="chapter" data-level="4.1" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#background-readings-2"><i class="fa fa-check"></i><b>4.1</b> Background Readings</a></li>
+<li class="chapter" data-level="4.2" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#using-weights-in-stata"><i class="fa fa-check"></i><b>4.2</b> Using Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Constructing and Using Post-Stratification Weights</a><ul>
+<li class="chapter" data-level="5.1" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html#creating-post-stratification-weights-in-stata"><i class="fa fa-check"></i><b>5.1</b> Creating Post-Stratification Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="item-scaling.html"><a href="item-scaling.html"><i class="fa fa-check"></i><b>6</b> Item Scaling</a><ul>
+<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#background-readings-3"><i class="fa fa-check"></i><b>6.1</b> Background Readings</a></li>
+<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#scaling-items-in-stata"><i class="fa fa-check"></i><b>6.2</b> Scaling Items in Stata</a></li>
+<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#simple-index-using-alpha"><i class="fa fa-check"></i><b>6.3</b> Simple Index using <code>alpha</code></a></li>
+<li class="chapter" data-level="6.4" data-path="item-scaling.html"><a href="item-scaling.html#index-using-factor-analysis-factor"><i class="fa fa-check"></i><b>6.4</b> Index using Factor Analysis <code>factor</code></a></li>
+<li class="chapter" data-level="6.5" data-path="item-scaling.html"><a href="item-scaling.html#using-irt-to-create-a-scale"><i class="fa fa-check"></i><b>6.5</b> Using IRT to Create a Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing Techniques</a><ul>
+<li class="chapter" data-level="7.1" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#background-readings-4"><i class="fa fa-check"></i><b>7.1</b> Background Readings</a></li>
+<li class="chapter" data-level="7.2" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#two-approaches-to-matchingbalancing-in-stata"><i class="fa fa-check"></i><b>7.2</b> Two Approaches to Matching/Balancing in Stata</a></li>
+<li class="chapter" data-level="7.3" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.3</b> Coarsened Exact Matching</a></li>
+<li class="chapter" data-level="7.4" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#entropy-balancing"><i class="fa fa-check"></i><b>7.4</b> Entropy Balancing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html"><i class="fa fa-check"></i><b>8</b> Construction and Analysis of Panel Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#background-readings-5"><i class="fa fa-check"></i><b>8.1</b> Background Readings</a></li>
+<li class="chapter" data-level="8.2" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#analyzing-panel-data-in-stata"><i class="fa fa-check"></i><b>8.2</b> Analyzing Panel Data in Stata</a></li>
+<li class="chapter" data-level="8.3" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.3</b> Reshaping Data</a></li>
+<li class="chapter" data-level="8.4" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#simple-panel-analysis-commands"><i class="fa fa-check"></i><b>8.4</b> Simple Panel Analysis Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a><ul>
+<li class="chapter" data-level="9.1" data-path="survey-experiments.html"><a href="survey-experiments.html#background-readings-6"><i class="fa fa-check"></i><b>9.1</b> Background Readings</a></li>
+<li class="chapter" data-level="9.2" data-path="survey-experiments.html"><a href="survey-experiments.html#analyzing-and-presenting-results-from-survey-experiments"><i class="fa fa-check"></i><b>9.2</b> Analyzing and Presenting Results from Survey Experiments</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Survey Data Analysis &amp; Survey Experiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="background-on-survey-design-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Background on Survey Design &amp; Analysis</h1>
+<div id="background-readings" class="section level2">
+<h2><span class="header-section-number">2.1</span> Background Readings</h2>
+<ul>
+<li><p>Krosnick, Jon A. “Survey Research.”&quot; <em>Annual Review of Psychology</em> 50.1 (1999): 537-567.</p></li>
+<li><p>Berinsky, Adam. “Measuring Public Opinion with Surveys.”&quot; <em>Annual Review of Political Science</em> 20 (2017): 309-29.</p></li>
+</ul>
+</div>
+<div id="analysis-refresher-logit" class="section level2">
+<h2><span class="header-section-number">2.2</span> Analysis Refresher – Logit</h2>
+<p>Open the 2008 Cooperative Congressional Election Study dataset from my website and recode some of the variables so that they will be appropriately coded:</p>
+<pre><code>use http://people.umass.edu/schaffne/cces08.dta
+recode cc316c 2=0 3=., gen(stemcell)
+recode cc307 2=-1 3=0 4/5=., gen(pid)
+recode v243 6=., gen(ideology)
+ren v213 education</code></pre>
+<p>The <code>logit</code> command in Stata works similarly to the <code>regress</code> command. You begin your line with <code>logit</code> and then list the dependent variable followed by your independent variables. An alternative to <code>logit</code> is <code>probit</code>, which works similarly, but assumes a different variance.</p>
+<pre><code>logit stemcell pid ideology education</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/logit1.png" />
+
+</div>
+<p>It is important to keep in mind that the coefficients are not easily interpreted in the way that OLS coefficients are. You can ask Stata to give you odds ratios instead of coefficients by adding <code>or</code> to the end of your logit command.</p>
+<pre><code>logit stemcell pid ideology education, or</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/logit2.png" />
+
+</div>
+<p>You can interpret the odds ratios a bit more easily. For example, you could interpret the odds ratio on education to mean that for each additional unit increase on the scale education, an individual’s odds of supporting stem cell research are 1.16 times greater. Or, perhaps slightly more intuitively, for each additional education category, an individual’s odds of supporting stem cell research increase by 16%. When you ask for odds ratios you don’t get an intercept, since the intercept doesn’t have an odds ratio.</p>
+<p>Now, let’s return to interpreting those coefficients. While odds ratios are fairly easy to calculate, they probably aren’t the best way to talk about the effects of the coefficients. More ideal and easy to understand are predicted probabilities. You can generate and plot these using the <code>margins</code> and <code>marginsplot</code> commands.</p>
+<p>First, margins will return a list of predicted probabilities under different conditions that you can specify. For example, if you wanted to know the probability that an individual who is “very liberal”&quot; on the ideology measure and average on the other covariates would support funding for stem cell research you could use this command:</p>
+<pre><code>margins, at(ideology=1)  atmeans</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/logit3.png" />
+
+</div>
+<p>Note that there is a .98 probability that this individual would support funding for stem cell research. Also note that the command gives you a 95% confidence interval for that prediction.</p>
+<p>Now what if you want to plot the predicted probabilities across all values of ideology? To do this, you first need to ask for those probabilities using the margins command. Then you can follow that up with the marginsplot command to graph them.</p>
+<pre><code>margins, at(ideology=(1(1)5))  atmeans</code></pre>
+<p>Note that the command above asks for predictions of support for stem cell research at every value between 1 and 5 in 1 point increments (this is the clause <code>ideology=(1(1)5))</code>.</p>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/logit4.png" />
+
+</div>
+<p>Now, you can use the <code>marginsplot</code> command to plot these predicted probabilities…</p>
+<pre><code>marginsplot</code></pre>
+<div class="figure">
+<img src="~/Box%20Sync/CCES%20RA/bookdown-stata/Imageslogitgraph1.png" />
+
+</div>
+<p>And now if we want to clean this graph up a bit, we can do that by adding some options to re-name the axis and graph titles:</p>
+<pre><code>marginsplot, ytitle(&quot;Prob. of supporting funding for stem cell research&quot;) xtitle(&quot;Ideology&quot;) title(&quot;Effect of Ideology on Stem Cell Support&quot;)</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/Online%20Survey%20Packet/Images/logitgraph2.png" />
+
+</div>
+</div>
+<div id="ordinal-logit-probit" class="section level2">
+<h2><span class="header-section-number">2.3</span> Ordinal Logit / Probit</h2>
+<p>An ordinal logit model is used when you have a dependent variable that takes on more than two categories and those categories are ordered. For example, Likert scales, common in survey research, are an example of ordered dependent variables.</p>
+<p>The command to estimate an ordinal logit model in Stata is <code>ologit</code>.</p>
+<p>In the 2008 CCES dataset, there is a question asking respondents their views on Affirmative Action policies (cc313). Respondents can indicate their support for such policies on a four point scale, ranging from 1 (“Strongly support”“) to 4 (”Strongly oppose“”). One could collapse these categories into “support”&quot; or “oppose,”&quot; but why throw away detail about the strength of support?</p>
+<p>To estimate an ordinal logit model on this question, you could use the following command:</p>
+<pre><code>ologit cc313 ideology pid education</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/ologit1.png" />
+
+</div>
+<p>The coefficients in this output are estimating the effect of a one unit increase in each independent variable on the log odds of moving to a higher category on the scale of the dependent variable. These can be converted to odds ratios using the same <code>or</code> option noted above.</p>
+<p>Predicted probablities can be created using the <code>marginsplot</code> command. Following the process outlined below for <code>mlogit</code> will work with <code>ologit</code> as well (to create predicted probabilities for each outcome category).</p>
+</div>
+<div id="multinomial-logit" class="section level2">
+<h2><span class="header-section-number">2.4</span> Multinomial Logit</h2>
+<p>For cases when the dependent variable has unordered categories, we use multinomial logit. In Stata, you would use the <code>mlogit</code> command to implement this type of model. Let’s use variable cc309 as our dependent variable. That variable asks respondents what they would most want to do to balance the federal budget – cut defense spending (1), cut domestic spending (2), or raise taxes (3). Let’s use the same set of independent variables.</p>
+<pre><code>mlogit cc309 ideology pid education</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/mlogit1.png" />
+
+</div>
+<p>Each coefficient and statistical test above is calculated in relation to the base category (cut domestic spending). So, the coefficients are telling you whether a coefficient means there is a significant difference between the odds of choosing the category relative to the base category, but not whether there is a significant difference across other categories.</p>
+<p>As with the logit model, you can again create predicted probabilities and plots to help look at the size of the effects.</p>
+<pre><code>margins, at(ideology=(1(1)5)) atmeans
+marginsplot, ytitle(&quot;Probability&quot;&quot;) xtitle(&quot;Ideology&quot;&quot;) </code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/mlogit.png" />
+
+</div>
+<p>Let’s clean this up a bit to make things clearer. In particular, let’s label the legend better by adding an option to label each key in the legend. I’m also going to get rid of the title by specifying a blank title:</p>
+<pre><code>marginsplot, ytitle(&quot;Probability&quot;&quot;) xtitle(&quot;Ideology&quot;) title(&quot;&quot;)  legend(order(1 &quot;Cut defense&quot;&quot; 2 &quot;Cut domestic&quot;&quot; 3 &quot;Raise taxes&quot;&quot;)) </code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/mlogit2.png" />
+
+</div>
+<p>The graphic shows that most of the effect of ideology occurs in choosing between the “cut defense” and “cut domestic” categories. Almost everyone, regardless of ideology, prefers to not raise taxes.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="approaches-to-sampling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

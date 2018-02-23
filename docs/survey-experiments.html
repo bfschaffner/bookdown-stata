@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Survey Data Analysis &amp; Survey Experiments</title>
+  <meta name="description" content="Advanced Survey Data Analysis &amp; Survey Experiments">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="davidjbarney/bookdown-stata" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  
+  
+  
+
+<meta name="author" content="Brian F. Schaffner">
+
+
+<meta name="date" content="2018-02-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="construction-and-analysis-of-panel-data.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced Survey Data Analysis & Survey Experiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-this-course"><i class="fa fa-check"></i><b>1.1</b> About this Course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html"><i class="fa fa-check"></i><b>2</b> Background on Survey Design &amp; Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#background-readings"><i class="fa fa-check"></i><b>2.1</b> Background Readings</a></li>
+<li class="chapter" data-level="2.2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#analysis-refresher-logit"><i class="fa fa-check"></i><b>2.2</b> Analysis Refresher – Logit</a></li>
+<li class="chapter" data-level="2.3" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#ordinal-logit-probit"><i class="fa fa-check"></i><b>2.3</b> Ordinal Logit / Probit</a></li>
+<li class="chapter" data-level="2.4" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#multinomial-logit"><i class="fa fa-check"></i><b>2.4</b> Multinomial Logit</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html"><i class="fa fa-check"></i><b>3</b> Approaches to Sampling</a><ul>
+<li class="chapter" data-level="3.1" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#background-readings-1"><i class="fa fa-check"></i><b>3.1</b> Background Readings</a></li>
+<li class="chapter" data-level="3.2" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#sampling-in-stata"><i class="fa fa-check"></i><b>3.2</b> Sampling in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html"><i class="fa fa-check"></i><b>4</b> Constructing and Using Design Weights</a><ul>
+<li class="chapter" data-level="4.1" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#background-readings-2"><i class="fa fa-check"></i><b>4.1</b> Background Readings</a></li>
+<li class="chapter" data-level="4.2" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#using-weights-in-stata"><i class="fa fa-check"></i><b>4.2</b> Using Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Constructing and Using Post-Stratification Weights</a><ul>
+<li class="chapter" data-level="5.1" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html#creating-post-stratification-weights-in-stata"><i class="fa fa-check"></i><b>5.1</b> Creating Post-Stratification Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="item-scaling.html"><a href="item-scaling.html"><i class="fa fa-check"></i><b>6</b> Item Scaling</a><ul>
+<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#background-readings-3"><i class="fa fa-check"></i><b>6.1</b> Background Readings</a></li>
+<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#scaling-items-in-stata"><i class="fa fa-check"></i><b>6.2</b> Scaling Items in Stata</a></li>
+<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#simple-index-using-alpha"><i class="fa fa-check"></i><b>6.3</b> Simple Index using <code>alpha</code></a></li>
+<li class="chapter" data-level="6.4" data-path="item-scaling.html"><a href="item-scaling.html#index-using-factor-analysis-factor"><i class="fa fa-check"></i><b>6.4</b> Index using Factor Analysis <code>factor</code></a></li>
+<li class="chapter" data-level="6.5" data-path="item-scaling.html"><a href="item-scaling.html#using-irt-to-create-a-scale"><i class="fa fa-check"></i><b>6.5</b> Using IRT to Create a Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing Techniques</a><ul>
+<li class="chapter" data-level="7.1" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#background-readings-4"><i class="fa fa-check"></i><b>7.1</b> Background Readings</a></li>
+<li class="chapter" data-level="7.2" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#two-approaches-to-matchingbalancing-in-stata"><i class="fa fa-check"></i><b>7.2</b> Two Approaches to Matching/Balancing in Stata</a></li>
+<li class="chapter" data-level="7.3" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.3</b> Coarsened Exact Matching</a></li>
+<li class="chapter" data-level="7.4" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#entropy-balancing"><i class="fa fa-check"></i><b>7.4</b> Entropy Balancing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html"><i class="fa fa-check"></i><b>8</b> Construction and Analysis of Panel Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#background-readings-5"><i class="fa fa-check"></i><b>8.1</b> Background Readings</a></li>
+<li class="chapter" data-level="8.2" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#analyzing-panel-data-in-stata"><i class="fa fa-check"></i><b>8.2</b> Analyzing Panel Data in Stata</a></li>
+<li class="chapter" data-level="8.3" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.3</b> Reshaping Data</a></li>
+<li class="chapter" data-level="8.4" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#simple-panel-analysis-commands"><i class="fa fa-check"></i><b>8.4</b> Simple Panel Analysis Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a><ul>
+<li class="chapter" data-level="9.1" data-path="survey-experiments.html"><a href="survey-experiments.html#background-readings-6"><i class="fa fa-check"></i><b>9.1</b> Background Readings</a></li>
+<li class="chapter" data-level="9.2" data-path="survey-experiments.html"><a href="survey-experiments.html#analyzing-and-presenting-results-from-survey-experiments"><i class="fa fa-check"></i><b>9.2</b> Analyzing and Presenting Results from Survey Experiments</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Survey Data Analysis &amp; Survey Experiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="survey-experiments" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Survey Experiments</h1>
+<p>In this section of the course we will learn about the strengths and weaknesses of survey experiments. We will then learn best practices for designing and analyzing such experiments.</p>
+<div id="background-readings-6" class="section level2">
+<h2><span class="header-section-number">9.1</span> Background Readings</h2>
+<ul>
+<li><p>Druckman et al. 2011. <em>Cambridge Handbook of Experimental Political Science.</em> Chapters 2-3.</p></li>
+<li><p>Gaines, Brian J., James H. Kuklinski, and Paul J. Quirk. “The logic of the survey experiment reexamined.” <em>Political Analysis.</em> 15, no. 1 (2007): 1-20.</p></li>
+<li><p>Barabas, Jason, and Jennifer Jerit. “Are survey experiments externally valid?” <em>American Political Science Review.</em> 104, no. 02 (2010): 226-242.</p></li>
+<li><p>Berinsky, Adam J., Michele F. Margolis, and Michael W. Sances. 2014. “Separating the Shirkers from the Workers? Making Sure Respondents Pay Attention on Self-Administered Surveys.” <em>American Journal of Political Science.</em> Vol. 58, No. 3, pp 739-753.</p></li>
+<li><p>Albertson, Bethany and Shana Kushner Gadarian. 2016. “Did that Scare You? Tips on Creating Emotion in Experimental Subjects.” <em>Political Analysis.</em></p></li>
+<li><p>Hainmueller, J., Hangartner, D., and Yamamoto, T. 2015. “Validating Vignette and Conjoint Survey Experiments Against Real-World Behavior?” <em>Proceedings of the National Academy of Sciences.</em></p></li>
+<li><p>Montgomery, Jacob M., Brendan Nyhan, and Michelle Torres. 2017. “How conditioning on post-treatment variables can ruin your experiment and what to do about it.” Working Paper. <a href="http://www.dartmouth.edu/~nyhan/post-treatment-bias.pdf" class="uri">http://www.dartmouth.edu/~nyhan/post-treatment-bias.pdf</a></p></li>
+</ul>
+</div>
+<div id="analyzing-and-presenting-results-from-survey-experiments" class="section level2">
+<h2><span class="header-section-number">9.2</span> Analyzing and Presenting Results from Survey Experiments</h2>
+<p>The great thing about running an experiment is that analyzing the results is often pretty straightforward. I have a couple of basic “go-to” routines to present basic experimental treatment effects, which I’ll outline here. Of course, things can get increasingly complicated with experiments that have lots of conditions or other features, but this will get you started.</p>
+<p>Here is a description of the experiment we’ll analyze here. It is a brief vignette, with random assignment of whether respondents received some kind of additional information about the candidate:</p>
+<blockquote>
+<p>In Illinois, Democrat David Gill is running for a seat in the U.S. House of Representatives. Gill is an ER physician who is married and has six children with his wife Elaine. [RANDOMIZED TEXT HERE] He stated that he was running for Congress, “to revive the fading American Dream and make sure DC is setting the right priorities for our families again.”</p>
+</blockquote>
+<p>Randomized text (with equal probability):</p>
+<ul>
+<li>No additional text (control condition).</li>
+<li>Gill was endorsed by the National Organization for Women.</li>
+<li>Gill was endorsed by the National Organization for Women because of his pro-choice views.</li>
+</ul>
+<p><strong>UMA311:</strong> Based on what you have heard, where would you place Gill on the ideological scale?</p>
+<ol style="list-style-type: decimal">
+<li>Very liberal</li>
+<li>Liberal</li>
+<li>Somewhat liberal</li>
+<li>Moderate</li>
+<li>Somewhat conservative</li>
+<li>Conservative</li>
+<li>Very Conservative</li>
+</ol>
+<p>The data to analyze this data can be accessed <a href="http://people.umass.edu/schaffne/endorsement_experiment.dta">here.</a></p>
+<p>Essentially, the idea was to see whether an endorsement from the National Organization for Women would change how liberal or conservative people thought the candidate was. So our key dependent variable is <code>UMA311</code> – where respondents placed Gill on the 7-point ideological scale. And we want to see whether this varies across our three conditions (the control and 2 treatment conditions). A common way that people sometimes plot these things is just to show the overall level of the dependent variable for each condition. Something like this:</p>
+<pre><code>graph bar UMA311, over(condition)</code></pre>
+<p>Of course, there are several problems with this particular graph. One is that we don’t have any uncertainty estimates for these figures (e.g. confidence intervals). We could recover this information by using a very basic regress command and then using marginsplot as so:</p>
+<pre><code>reg UMA311 i.condition
+margins, over(condition)
+marginsplot, recast(bar) xlabel(, angle(45)) title(&quot; &quot;) ytitle(&quot;Conservatism&quot;) xtitle(&quot; &quot;)</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/exp1.png" />
+
+</div>
+<p>So this is a little better, and we could further play with this graph to clean this up. But it still isn’t as informative as we might prefer. In particular, what we really want here are the treatment effects. That is, the difference between the treatment condition(s) and the control condition. This graphic makes it so we have to figure that out for ourselves. So, a better approach would be to essentially produce a coefficient plot. There are a couple of ways to do this in Stata (including the <code>margins</code> command), but the easiest is to use the <code>coefplot</code> package.</p>
+<pre><code>reg UMA311 i.condition
+coefplot, drop(_cons) xline(0) plotr(lc(none)) xlabel(-1.5 -1 -.5 0 .5)</code></pre>
+<p>A few points here. First, I use the <code>drop(_cons)</code> option to omit the plotting of the intercept. That is pretty much irrelevant to understanding the treatment effects and it is confusing to have it in the same plot.</p>
+<p>I like plotting a line at 0 (<code>xline(0)</code>) as a reference. If a treatment effect is significant, then the confidence interval for that effect should not overlap with the zero line. That is what we see here. This also gives us a better sense of the size of the treatment effects. The endorsement with no explanation moves peoples’ estimates of Gill’s ideology a full point more liberal, whereas the endorsement with the explanation only has an effect that is about half has large. Note that I had to use the <code>xlabel(-1.5 -1 -.5 0 .5)</code> option so that the reference line would show up since the default range for this particular plot would not include zero otherwise.</p>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/exp2.png" />
+
+</div>
+<p>Finally, what if we want to see whether our treatment effects are heterogeneous by some other variable in our model? Well, the easiest thing to do is to estimate separate regression models and combine them into a single plot. In the code below, I estimate treatment effects for men, store the results, then for women (and store those results), and then use <code>coefplot</code> to bring in the results for both men and women into a single plot.</p>
+<pre><code>reg UMA311 i.condition if gender==0
+est store men
+reg UMA311 i.condition if gender==1
+est store women
+coefplot men women, drop( cons) xline(0) xlabel(-1.5 -1 -.5 0 .5)</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/exp3.png" />
+
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="construction-and-analysis-of-panel-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

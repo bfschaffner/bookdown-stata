@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Survey Data Analysis &amp; Survey Experiments</title>
+  <meta name="description" content="Advanced Survey Data Analysis &amp; Survey Experiments">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="davidjbarney/bookdown-stata" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  
+  
+  
+
+<meta name="author" content="Brian F. Schaffner">
+
+
+<meta name="date" content="2018-02-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="constructing-and-using-post-stratification-weights.html">
+<link rel="next" href="matching-and-balancing-techniques.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced Survey Data Analysis & Survey Experiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-this-course"><i class="fa fa-check"></i><b>1.1</b> About this Course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html"><i class="fa fa-check"></i><b>2</b> Background on Survey Design &amp; Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#background-readings"><i class="fa fa-check"></i><b>2.1</b> Background Readings</a></li>
+<li class="chapter" data-level="2.2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#analysis-refresher-logit"><i class="fa fa-check"></i><b>2.2</b> Analysis Refresher – Logit</a></li>
+<li class="chapter" data-level="2.3" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#ordinal-logit-probit"><i class="fa fa-check"></i><b>2.3</b> Ordinal Logit / Probit</a></li>
+<li class="chapter" data-level="2.4" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#multinomial-logit"><i class="fa fa-check"></i><b>2.4</b> Multinomial Logit</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html"><i class="fa fa-check"></i><b>3</b> Approaches to Sampling</a><ul>
+<li class="chapter" data-level="3.1" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#background-readings-1"><i class="fa fa-check"></i><b>3.1</b> Background Readings</a></li>
+<li class="chapter" data-level="3.2" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#sampling-in-stata"><i class="fa fa-check"></i><b>3.2</b> Sampling in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html"><i class="fa fa-check"></i><b>4</b> Constructing and Using Design Weights</a><ul>
+<li class="chapter" data-level="4.1" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#background-readings-2"><i class="fa fa-check"></i><b>4.1</b> Background Readings</a></li>
+<li class="chapter" data-level="4.2" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#using-weights-in-stata"><i class="fa fa-check"></i><b>4.2</b> Using Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Constructing and Using Post-Stratification Weights</a><ul>
+<li class="chapter" data-level="5.1" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html#creating-post-stratification-weights-in-stata"><i class="fa fa-check"></i><b>5.1</b> Creating Post-Stratification Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="item-scaling.html"><a href="item-scaling.html"><i class="fa fa-check"></i><b>6</b> Item Scaling</a><ul>
+<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#background-readings-3"><i class="fa fa-check"></i><b>6.1</b> Background Readings</a></li>
+<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#scaling-items-in-stata"><i class="fa fa-check"></i><b>6.2</b> Scaling Items in Stata</a></li>
+<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#simple-index-using-alpha"><i class="fa fa-check"></i><b>6.3</b> Simple Index using <code>alpha</code></a></li>
+<li class="chapter" data-level="6.4" data-path="item-scaling.html"><a href="item-scaling.html#index-using-factor-analysis-factor"><i class="fa fa-check"></i><b>6.4</b> Index using Factor Analysis <code>factor</code></a></li>
+<li class="chapter" data-level="6.5" data-path="item-scaling.html"><a href="item-scaling.html#using-irt-to-create-a-scale"><i class="fa fa-check"></i><b>6.5</b> Using IRT to Create a Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing Techniques</a><ul>
+<li class="chapter" data-level="7.1" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#background-readings-4"><i class="fa fa-check"></i><b>7.1</b> Background Readings</a></li>
+<li class="chapter" data-level="7.2" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#two-approaches-to-matchingbalancing-in-stata"><i class="fa fa-check"></i><b>7.2</b> Two Approaches to Matching/Balancing in Stata</a></li>
+<li class="chapter" data-level="7.3" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.3</b> Coarsened Exact Matching</a></li>
+<li class="chapter" data-level="7.4" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#entropy-balancing"><i class="fa fa-check"></i><b>7.4</b> Entropy Balancing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html"><i class="fa fa-check"></i><b>8</b> Construction and Analysis of Panel Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#background-readings-5"><i class="fa fa-check"></i><b>8.1</b> Background Readings</a></li>
+<li class="chapter" data-level="8.2" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#analyzing-panel-data-in-stata"><i class="fa fa-check"></i><b>8.2</b> Analyzing Panel Data in Stata</a></li>
+<li class="chapter" data-level="8.3" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.3</b> Reshaping Data</a></li>
+<li class="chapter" data-level="8.4" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#simple-panel-analysis-commands"><i class="fa fa-check"></i><b>8.4</b> Simple Panel Analysis Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a><ul>
+<li class="chapter" data-level="9.1" data-path="survey-experiments.html"><a href="survey-experiments.html#background-readings-6"><i class="fa fa-check"></i><b>9.1</b> Background Readings</a></li>
+<li class="chapter" data-level="9.2" data-path="survey-experiments.html"><a href="survey-experiments.html#analyzing-and-presenting-results-from-survey-experiments"><i class="fa fa-check"></i><b>9.2</b> Analyzing and Presenting Results from Survey Experiments</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Survey Data Analysis &amp; Survey Experiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="item-scaling" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Item Scaling</h1>
+<div id="background-readings-3" class="section level2">
+<h2><span class="header-section-number">6.1</span> Background Readings</h2>
+<ul>
+<li><p>Warshaw, Christopher. 2017. “Latent Constructs in Public Opinion.” <em>The Oxford Handbook of Polling and Polling Methods</em>. DOI: 10.1093/oxfordhb/9780190213299.013.30</p></li>
+<li><p>Maria Orlando Edelen and Bryce B. Reeve. 2007. “Applying item response theory (IRT) modeling to questionnaire development, evaluation, and refinement.” <em>Quality of Life Research</em> 16: 5 - 18.</p></li>
+<li><p>Treier, Shawn and Simon Jackman. 2008. “Democracy as a Latent Variable.” <em>American Journal of Political Science.</em> Vol. 52, No. 1, pp. 201-17.</p></li>
+</ul>
+</div>
+<div id="scaling-items-in-stata" class="section level2">
+<h2><span class="header-section-number">6.2</span> Scaling Items in Stata</h2>
+<p>In the 2010 CCES, respondents were asked to indicate whether they would support using U.S. troops to support each of the following objectives. The objectives were:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Objective</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cc414_1</td>
+<td>Ensure supply of oil</td>
+</tr>
+<tr class="even">
+<td>cc414_2</td>
+<td>Destroy terrorist camp</td>
+</tr>
+<tr class="odd">
+<td>cc414_3</td>
+<td>Intervene in genocide or civil war</td>
+</tr>
+<tr class="even">
+<td>cc414_4</td>
+<td>Assist spread of democracy</td>
+</tr>
+<tr class="odd">
+<td>cc414_5</td>
+<td>Protect us allies under attack</td>
+</tr>
+<tr class="even">
+<td>cc414_6</td>
+<td>Help un uphold international law</td>
+</tr>
+</tbody>
+</table>
+<p>Responses are coded as either “1” if they support the use of troops in that situation and “2” if they do not. Let’s start by re-coding these so that “0” is the code for those who do not support using troops in that situation.</p>
+<pre><code>recode cc414 1 cc414 2 cc414 3 cc414 4 cc414 5 cc414 6 (2=0)</code></pre>
+<p>In the following sections, we examine three methods of combining these six items into a single scale measuring attitudes toward immigration policy.</p>
+</div>
+<div id="simple-index-using-alpha" class="section level2">
+<h2><span class="header-section-number">6.3</span> Simple Index using <code>alpha</code></h2>
+<p>We want to see whether the variables are measuring the same concept. We could do this either by creating a simple index with the <code>alpha</code> command or by creating the index using factor analysis.</p>
+<p>To create the index using <code>alpha</code>, we would use the following command:</p>
+<pre><code>alpha cc414 1 cc414 2 cc414 3 cc414 4 cc414 5 cc414 6, gen(intervention)</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/alpha.png" />
+
+</div>
+<p>The <code>alpha</code> command has Stata indicate the reliability for a set of measures; that is, it indicates the extent to which the variables are measuring the same concept. In this case, our items receive a reliability value of .58, which is not particularly high. We added an option to the command: <code>gen()</code> tells Stata to combine the measures into a single measure that is simply the average value of the other variables. We can think of this variable as the underlying support for military interventions.</p>
+<p>You can see how this variable is distributed:</p>
+<pre><code>twoway histogram intervention, percent bc(blue)</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/alpha_histogram.png" />
+
+</div>
+<p>This can simply be interpreted as the proportion of times that respondents supported military intervention. Note that very few supported all reasons for an intervention, and the mode was .5 (half of the situations).</p>
+</div>
+<div id="index-using-factor-analysis-factor" class="section level2">
+<h2><span class="header-section-number">6.4</span> Index using Factor Analysis <code>factor</code></h2>
+<p>Alpha essentially creates a simple addititve index. But a second way to combine these variables is through a factor analysis. Factor analysis potentially provides more information because it allows some items to have more influence over the latent (index) variable than others. To run a factor analysis use the <code>factor</code> command:</p>
+<pre><code>factor cc414_1 cc414_2 cc414_3 cc414_4 cc414_5 cc414_6</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/factor.png" />
+
+</div>
+<p>There are two things to look at here. First, the Eigenvalue for the first factor is above 1, which tells us that there is some underlying latent variable that the combination of these variables are jointly measuring. Second, the factor loadings for that first factor are above .3 for all but the sixth variable. Generally, we might drop a variable from our factor analysis if its loading was less than .3 and we did not have a great theoretical reason for it to be there. But in this case we’ll go ahead and keep it in.</p>
+<p>So let’s go ahead and use the <code>predict</code> command to generate our new variable that combines the measures of intervention.</p>
+<pre><code>predict intervention2</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/factor2.png" />
+
+</div>
+<p>The output here gives a sense of how much each variable contributes to the value of the underlying latent variable (<code>intervention2</code>). Note that cc414_6 gets the least weight, which makes sense since it also had the lowest factor loading.</p>
+<p>The new variable created by this command (<code>intervention2</code>) is the underlying latent variable that we are assuming captures one’s general support for military interventions. The variable will be created as a standard normal variable, meaning that it’s mean will be approximately 0 and it’s standard deviation will be approximately 1. Let’s take a look at the distribution of this variable:</p>
+<pre><code>twoway histogram intervention2, percent bc(blue)</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/factor_histogram.png" />
+
+</div>
+<p>Note that the distribution of this variable looks quite a bit different from the one we just created with the <code>alpha</code> command. Despite this fact, the measures are fairly highly correlated (at .98). See the scatterplot below. The key difference is that the factor analysis provides a bit more gradation in the measure compared to just averaging the measures.</p>
+<pre><code>twoway scatter intervention intervention2, aspect(1) ytitle(&quot;Alpha created measure&quot;) xtitle(&quot;Factor analysis created measure&quot;)</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/alpha_factor_scatter.png" />
+
+</div>
+</div>
+<div id="using-irt-to-create-a-scale" class="section level2">
+<h2><span class="header-section-number">6.5</span> Using IRT to Create a Scale</h2>
+<p>Item response theory (IRT) is another approach to scaling indicators, with its foundations coming from research on testing. Unlike factor analysis, the IRT approach assumes that the items are capturing a single underlying latent variable. IRT is also specifically designed for binary or categorical items. Like factor analysis, IRT allows for some variables to contribute more to determining that latent variable.</p>
+<p>Stata 14 includes a family of IRT approaches. The approach we will use here (2 parameter logit - <code>2pl</code>) is designed for binary items and allows for each item to contribute differently to the construction of the underlying latent variable.</p>
+<p>To run the model, we use the following command:</p>
+<pre><code>irt 2pl cc414_1-cc414_6</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/irt1.png" />
+
+</div>
+<p>As the name of this approach implies, there are two parameters estimated for each item. The first is the discrimination parameter (a). This parameter indicates how highly correlated the item is with the underlying latent variable. For example, cc414_2 and cc414_5 both have discrimination parameters at or above 2, which indicates that those items are particularly valuable for differentiating respondents on the latent trait. These values are similar to factor loadings.</p>
+<p>The second parameter for each item is the difficulty parameter. This is essentially an intercept for each item – indicating how frequently the sample, on average, responded positively to the item. For example, the difficulty parameter for cc414_5 (using troops to protect allies who are under attack) indicates that this was the item that respondents most frequently responded “yes” to (and a simple cross tabulation of the items would confirm this). cc414_4 (using troops to assist the spread of democracy) was the item that individuals responded “yes” to least frequently.</p>
+<p>We can visualize these items with the following command:</p>
+<pre><code>irtgraph icc</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/irt2.png" />
+
+</div>
+<p>This graphic shows the relationship between the latent trait (theta) and the probability of answering “yes” to each of the items. Note that most of the items have a fairly strong correlation with theta, though this is not particularly true for cc414_6 (which also did not load very highly with the others when we conducted the factor analysis); that item has a gradual slope.</p>
+<p>Now, we can turn to generating a variable that captures each individual’s value for the underlying latent trait (theta). To do this, we use the <code>predict</code> command with the <code>, latent</code> option:</p>
+<pre><code>predict intervention3, latent</code></pre>
+<p>And just for fun, let’s see how this compares to the latent variable created through factor analysis: <img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/factor_irt_scatter.png" /></p>
+<p>These are highly correlated (at .996), so at least in this case, it would not have mattered much if you had used IRT or factor analysis.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="constructing-and-using-post-stratification-weights.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="matching-and-balancing-techniques.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

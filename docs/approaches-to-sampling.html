@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Survey Data Analysis &amp; Survey Experiments</title>
+  <meta name="description" content="Advanced Survey Data Analysis &amp; Survey Experiments">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="davidjbarney/bookdown-stata" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  
+  
+  
+
+<meta name="author" content="Brian F. Schaffner">
+
+
+<meta name="date" content="2018-02-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="background-on-survey-design-analysis.html">
+<link rel="next" href="constructing-and-using-design-weights.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced Survey Data Analysis & Survey Experiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-this-course"><i class="fa fa-check"></i><b>1.1</b> About this Course</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html"><i class="fa fa-check"></i><b>2</b> Background on Survey Design &amp; Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#background-readings"><i class="fa fa-check"></i><b>2.1</b> Background Readings</a></li>
+<li class="chapter" data-level="2.2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#analysis-refresher-logit"><i class="fa fa-check"></i><b>2.2</b> Analysis Refresher – Logit</a></li>
+<li class="chapter" data-level="2.3" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#ordinal-logit-probit"><i class="fa fa-check"></i><b>2.3</b> Ordinal Logit / Probit</a></li>
+<li class="chapter" data-level="2.4" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#multinomial-logit"><i class="fa fa-check"></i><b>2.4</b> Multinomial Logit</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html"><i class="fa fa-check"></i><b>3</b> Approaches to Sampling</a><ul>
+<li class="chapter" data-level="3.1" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#background-readings-1"><i class="fa fa-check"></i><b>3.1</b> Background Readings</a></li>
+<li class="chapter" data-level="3.2" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#sampling-in-stata"><i class="fa fa-check"></i><b>3.2</b> Sampling in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html"><i class="fa fa-check"></i><b>4</b> Constructing and Using Design Weights</a><ul>
+<li class="chapter" data-level="4.1" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#background-readings-2"><i class="fa fa-check"></i><b>4.1</b> Background Readings</a></li>
+<li class="chapter" data-level="4.2" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#using-weights-in-stata"><i class="fa fa-check"></i><b>4.2</b> Using Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Constructing and Using Post-Stratification Weights</a><ul>
+<li class="chapter" data-level="5.1" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html#creating-post-stratification-weights-in-stata"><i class="fa fa-check"></i><b>5.1</b> Creating Post-Stratification Weights in Stata</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="item-scaling.html"><a href="item-scaling.html"><i class="fa fa-check"></i><b>6</b> Item Scaling</a><ul>
+<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#background-readings-3"><i class="fa fa-check"></i><b>6.1</b> Background Readings</a></li>
+<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#scaling-items-in-stata"><i class="fa fa-check"></i><b>6.2</b> Scaling Items in Stata</a></li>
+<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#simple-index-using-alpha"><i class="fa fa-check"></i><b>6.3</b> Simple Index using <code>alpha</code></a></li>
+<li class="chapter" data-level="6.4" data-path="item-scaling.html"><a href="item-scaling.html#index-using-factor-analysis-factor"><i class="fa fa-check"></i><b>6.4</b> Index using Factor Analysis <code>factor</code></a></li>
+<li class="chapter" data-level="6.5" data-path="item-scaling.html"><a href="item-scaling.html#using-irt-to-create-a-scale"><i class="fa fa-check"></i><b>6.5</b> Using IRT to Create a Scale</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing Techniques</a><ul>
+<li class="chapter" data-level="7.1" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#background-readings-4"><i class="fa fa-check"></i><b>7.1</b> Background Readings</a></li>
+<li class="chapter" data-level="7.2" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#two-approaches-to-matchingbalancing-in-stata"><i class="fa fa-check"></i><b>7.2</b> Two Approaches to Matching/Balancing in Stata</a></li>
+<li class="chapter" data-level="7.3" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.3</b> Coarsened Exact Matching</a></li>
+<li class="chapter" data-level="7.4" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#entropy-balancing"><i class="fa fa-check"></i><b>7.4</b> Entropy Balancing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html"><i class="fa fa-check"></i><b>8</b> Construction and Analysis of Panel Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#background-readings-5"><i class="fa fa-check"></i><b>8.1</b> Background Readings</a></li>
+<li class="chapter" data-level="8.2" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#analyzing-panel-data-in-stata"><i class="fa fa-check"></i><b>8.2</b> Analyzing Panel Data in Stata</a></li>
+<li class="chapter" data-level="8.3" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.3</b> Reshaping Data</a></li>
+<li class="chapter" data-level="8.4" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#simple-panel-analysis-commands"><i class="fa fa-check"></i><b>8.4</b> Simple Panel Analysis Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a><ul>
+<li class="chapter" data-level="9.1" data-path="survey-experiments.html"><a href="survey-experiments.html#background-readings-6"><i class="fa fa-check"></i><b>9.1</b> Background Readings</a></li>
+<li class="chapter" data-level="9.2" data-path="survey-experiments.html"><a href="survey-experiments.html#analyzing-and-presenting-results-from-survey-experiments"><i class="fa fa-check"></i><b>9.2</b> Analyzing and Presenting Results from Survey Experiments</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Survey Data Analysis &amp; Survey Experiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="approaches-to-sampling" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Approaches to Sampling</h1>
+<div id="background-readings-1" class="section level2">
+<h2><span class="header-section-number">3.1</span> Background Readings</h2>
+<ul>
+<li><p>Lohr, Sharon. <em>Sampling: Design and Analysis.</em> Chapter 1.</p></li>
+<li><p>Frankel, Martin R., and Lester R. Frankel. ``Fifty years of survey sampling in the United States.&quot; <em>Public Opinion Quarterly</em> (1987): S127-S138.</p></li>
+<li><p>Brick, J. Michael. ``The future of survey sampling.&quot; <em>Public Opinion Quarterly</em> 75.5 (2011): 872-888.</p></li>
+<li><p>Baker, Reg, et al. ``Summary Report of the AAPOR Task Force on Non-probability Sampling.&quot; <em>Journal of Survey Statistics and Methodology</em> (2013). (And read subsequent commentary)</p></li>
+<li><p>Ansolabehere, Stephen, and Brian F. Schaffner. “Does survey mode still matter? Findings from a 2010 multi-mode comparison.” <em>Political Analysis</em> (2014).</p></li>
+</ul>
+</div>
+<div id="sampling-in-stata" class="section level2">
+<h2><span class="header-section-number">3.2</span> Sampling in Stata</h2>
+<p>One can use almost any program to draw a random sample. In Stata, you could write your own basic program to sample observations, making use of Stata’s random number generator (e.g. <code>gen random=runiform()</code>). However, there is also a useful packaged program that streamlines the process for you and makes it easier to do sampling proportional to size – <code>samplepps</code>.</p>
+<p>Let’s start by opening a dataset that is a list of most of the local communities (towns and cities) in the United States.</p>
+<pre><code>use http://people.umass.edu/schaffne/communities.dta</code></pre>
+<p>Now, let’s say that we wanted to use these communities to conduct a cluster sample. In essence, we want to select 100 communities (the idea is that we would then travel to those communities and randomly select households to interview). <code>samplepps</code> is specifically designed to conduct sampling proportional to size. In this case, we have the population of each community as one of the variables in our dataset (variable name: <code>population</code>). So, to take our sample of 100 communities, we could do the following:</p>
+<pre><code>samplepps insample, ncases(100) size(population)</code></pre>
+<p>This creates a new variable called <code>insample</code> which equals 1 if the observation in the dataset was selected into your sample (so there should be 100 cases with 1s).</p>
+<p>But what if you don’t want to sample proportional to the size of the community. That is, what if you want each community to have an equal chance of being selected. Well, this is easy enough; you just have to trick <code>samplepps</code> by giving all the cases in your dataset the same size. So you could simply do this:</p>
+<pre><code>gen size=1
+
+samplepps insample2, ncases(100) size(size)</code></pre>
+<p>Now, if you want to see the impact of sampling proportional to size versus just taking a random sample where all communities have an equal chance of being selected, check out the average population size for the communities who have a 1 for <code>insample</code> compared to those who have a 1 for <code>insample2</code>. The latter communities have much smaller populations, of course.</p>
+<p>Finally, it is worth noting that you can use <code>if</code> commands with <code>samplepps</code>, and this can come in handy if you want to do stratified sampling. For example, in this dataset, some regions have many more communities than others. But you could use the <code>if</code> command to sample within each region (one region at a time).</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="background-on-survey-design-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="constructing-and-using-design-weights.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
