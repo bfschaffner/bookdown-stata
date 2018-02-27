@@ -1,5 +1,1 @@
-This is the absolute minimum you need to start a [bookdown](https://bookdown.org/home/about.html) book. You can find the
-preview of this book at http://seankross.com/bookdown-start/
-
-All of the content of this repository is licensed 
-[CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+This is a web version of Brian Schaffner's Advanced Survey Data Analysis packet using [bookdown](https://bookdown.org/home/about.html) book. 
