@@ -1,7 +1,7 @@
 --- 
 title: "Advanced Survey Data Analysis & Survey Experiments"
 author: "Brian F. Schaffner"
-date: "2018-02-23"
+date: "2018-02-27"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -14,15 +14,13 @@ github-repo: davidjbarney/bookdown-stata
 
 ## About this Course
 
-This course will focus on various aspects of advanced survey design and analysis, with a particular focus at the end of the course on survey experiments. Most of our assignments and examples will utilize data from the Cooperative Congressional Election Study, a large-scale survey of Americans that has been conducted annually since 2005. I have been a co-PI on this survey project since 2010. I am also the Director (and founder) of UMass Poll, a survey organization housed at the University of Massachusetts Amherst.
+This course will focus on various aspects of advanced survey design and analysis, with a particular focus at the end of the course on survey experiments. Most of the examples here will utilize data from the Cooperative Congressional Election Study, a large-scale survey of Americans that has been conducted annually since 2005. I have been a co-PI on this survey project since 2010. I am also the Director (and founder) of UMass Poll, a survey organization housed at the University of Massachusetts Amherst.
 
-This course will focus heavily on "engaged" activities to help you learn approaches and techniques. For each topic, there will be an assignment that is designed to be completed in class. While most of these projects will involve analyzing existing survey data, the course will culminate with the design, implementation, and analysis of a survey experiment designed by the students in the course. I also encourage you to bring your own survey data that you wish to analyze and I can offer help with those analyses during our time in the lab. 
-
-For each class meeting, I have listed some recommended background readings. I would stronlgy encourage you to do this reading before each class. Most of these readings should be easily available on-line. However, book chapters are included at the end of this packet for your convenience. 
+This course will focus heavily on "engaged" activities to help you learn approaches and techniques. Each topic will include examples that involve analyzing existing survey data; the techniques illustrated here may also be applied to your own survey data. For each topic, I have listed some recommended background readings. I would stronlgy encourage you to do this reading before each module of this packet. Most of these readings should be easily available on-line.
 
 ## Software
 
-This packet and the course instruction will primarily make use of the Stata statistical software. However, there is a parallel packet available for R users that I will make available in PDF form and which can also be found online [here](http://www.miacosta.com/blog).
+This packet and the course instruction will primarily make use of the Stata statistical software. However, there is a parallel packet available for R users available in PDF form which can be found online [here](http://www.miacosta.com/blog).
 
 # Background on Survey Design & Analysis
 
@@ -63,7 +61,7 @@ You can interpret the odds ratios a bit more easily. For example, you could inte
 
 Now, let's return to interpreting those coefficients. While odds ratios are fairly easy to calculate, they probably aren't the best way to talk about the effects of the coefficients. More ideal and easy to understand are predicted probabilities. You can generate and plot these using the `margins` and `marginsplot` commands.
 
-First, margins will return a list of predicted probabilities under different conditions that you can specify. For example, if you wanted to know the probability that an individual who is "very liberal"" on the ideology measure and average on the other covariates would support funding for stem cell research you could use this command:
+First, `margins` will return a list of predicted probabilities under different conditions that you can specify. For example, if you wanted to know the probability that an individual who is "very liberal"" on the ideology measure and average on the other covariates would support funding for stem cell research you could use this command:
 
 ```
 margins, at(ideology=1)  atmeans
@@ -106,7 +104,7 @@ An ordinal logit model is used when you have a dependent variable that takes on 
 
 The command to estimate an ordinal logit model in Stata is `ologit`. 
 
-In the 2008 CCES dataset, there is a question asking respondents their views on Affirmative Action policies (cc313). Respondents can indicate their support for such policies on a four point scale, ranging from 1 ("Strongly support"") to 4 ("Strongly oppose""). One could collapse these categories into "support"" or "oppose,"" but why throw away detail about the strength of support?
+In the 2008 CCES dataset, there is a question asking respondents their views on Affirmative Action policies (`cc313`). Respondents can indicate their support for such policies on a four point scale, ranging from 1 ("Strongly support"") to 4 ("Strongly oppose""). One could collapse these categories into "support"" or "oppose,"" but why throw away detail about the strength of support?
 
 To estimate an ordinal logit model on this question, you could use the following command:
 
@@ -121,7 +119,7 @@ The coefficients in this output are estimating the effect of a one unit increase
 Predicted probablities can be created using the `marginsplot` command. Following the process outlined below for `mlogit` will work with `ologit` as well (to create predicted probabilities for each outcome category). 
 
 ## Multinomial Logit
-For cases when the dependent variable has unordered categories, we use multinomial logit. In Stata, you would use the `mlogit` command to implement this type of model. Let's use variable cc309 as our dependent variable. That variable asks respondents what they would most want to do to balance the federal budget -- cut defense spending (1), cut domestic spending (2), or raise taxes (3). Let's use the same set of independent variables.  
+For cases when the dependent variable has unordered categories, we use multinomial logit. In Stata, you would use the `mlogit` command to implement this type of model. Let's use variable `cc309` as our dependent variable. That variable asks respondents what they would most want to do to balance the federal budget -- cut defense spending (1), cut domestic spending (2), or raise taxes (3). Let's use the same set of independent variables.  
 
 ```
 mlogit cc309 ideology pid education
@@ -156,9 +154,9 @@ The graphic shows that most of the effect of ideology occurs in choosing between
 ##Background Readings
 * Lohr, Sharon. *Sampling: Design and Analysis.* Chapter 1. 
 
-* Frankel, Martin R., and Lester R. Frankel. ``Fifty years of survey sampling in the United States." *Public Opinion Quarterly* (1987): S127-S138.
+* Frankel, Martin R., and Lester R. Frankel. ``Fifty Years of Survey Sampling in the United States." *Public Opinion Quarterly* (1987): S127-S138.
 
-* Brick, J. Michael. ``The future of survey sampling." *Public Opinion Quarterly* 75.5 (2011): 872-888.
+* Brick, J. Michael. ``The Future of Survey Sampling." *Public Opinion Quarterly* 75.5 (2011): 872-888.
 
 * Baker, Reg, et al. ``Summary Report of the AAPOR Task Force on Non-probability Sampling." *Journal of Survey Statistics and Methodology* (2013). (And read subsequent commentary)
 
@@ -199,14 +197,14 @@ Finally, it is worth noting that you can use `if` commands with `samplepps`, and
 
 * [DeBell, Matthew and Jon A. Krosnick. "Computing Weights for American National Election Study Survey Data."](http://electionstudies.org/resources/papers/nes012427.pdf)
 
-* Kreuter, F, and Valliant, R., (2007), "A survey on survey statistics: What is done and can be done in Stata." *The Stata Journal* Volume 7, Number 1, pages 1 - 21.
+* Kreuter, F, and Valliant, R., (2007), "A Survey on Survey Statistics: What is done and can be done in Stata." *The Stata Journal* Volume 7, Number 1, pages 1 - 21.
 
 ## Using Weights in Stata
 In a dataset, survey weights are captured by a variable that indicates how much each respondent should "count." For example, a respondent who has a 1 for a weight variable would count as a single respondent; a respondent who receives a .5 for a weight variable should count as half a respondent; and a respondent who has a 2 would count as two respondents. 
 
-Stata has four different options for weighting statistical analyses. You can read more about these options by typing `help weight` into the command line in Stata. However, only two of these weights are relevant for survey data -- `pweight` and `aweight`. Using `aweight` and `pweight` will result in the same point estimates. However, the pweight option is the more correct option because aweight does not calculate the standard errors correctly. However, in some cases you may be forced to use aweights as most, but not all, Stata commands support the pweight option (e.g. graphing options).
+Stata has four different options for weighting statistical analyses. You can read more about these options by typing `help weight` into the command line in Stata. However, only two of these weights are relevant for survey data -- `pweight` and `aweight`. Using `aweight` and `pweight` will result in the same point estimates. However, the pweight option is the more correct option because aweight does not calculate the standard errors correctly. However, in some cases you may be forced to use aweights as most, but not all, Stata commands support the `pweight` option (e.g. graphing options).
 
-The [2010 UMass Poll Massachusetts Exit Poll] (http://people.umass.edu/schaffne/mass_exitpoll.dta) includes a variable called `weight`. Respondents in the exit poll were weighted to account for the stratified nature of the sampling procedure. By stratifying towns by geography and other factors, not every voter had an equal chance of being sampled. Thus, the weight variable adjusts for this fact. 
+The [2010 UMass Poll Massachusetts Exit Poll](http://people.umass.edu/schaffne/mass_exitpoll.dta) includes a variable called `weight`. Respondents in the exit poll were weighted to account for the stratified nature of the sampling procedure. By stratifying towns by geography and other factors, not every voter had an equal chance of being sampled. Thus, the weight variable adjusts for this fact. 
 
 The easiest way to implement sampling weights when conducting statistical analysis is a two-step process. First, just one time at the beginning of your session you need to tell Stata that your dataset includes a weight variable by typing the following command:
 
@@ -232,7 +230,7 @@ Notice that applying the weights had a pretty big effect on the results. With th
 ##Creating Post-Stratification Weights in Stata
 If you know the population values of demographics that you wish to weight on, you can create the weights yourself using an approach known as post-stratification raking. There is a user-written program in Stata to allow for the creation of such weights. The function is called `ipfweight`.
 
-As an example, we will use the [2014 Massachusetts Exit Poll data] (http://people.umass.edu/schaffne/mass\_exitpoll\_2014.dta). The dataset already has a sampling weight included, to adjust for the stratified cluster sample approach taken. However, because of unequal response rates among different demographic groups, we also need to do additional post-stratification weighting. Here is what we know about the demographic composition of the electorate in 2014 according to voting records:
+As an example, we will use the [2014 Massachusetts Exit Poll data](http://people.umass.edu/schaffne/mass_exitpoll_2014.dta). The dataset already has a sampling weight included, to adjust for the stratified cluster sample approach taken. However, because of unequal response rates among different demographic groups, we also need to do additional post-stratification weighting. Here is what we know about the demographic composition of the electorate in 2014 according to voting records:
 
 Characteristic | % of Electorate
 ---------------|----------------
@@ -261,14 +259,14 @@ Now, we can use the `ipfweight` command to weight to the population values. To d
 ipfweight female white black hispanic age18_29 age65_over, gen(weight) val(47 53 12 88 96 4 95 5 93 7 70 30) maxit(25) st(sampleweight)
 ```
 
-This command first identifies the variables on which to weight (female, white, black, hispanic, age18_29 and age65_over). The `gen()` option specifies the name of the weight variable that will be created after this command is executed (I'm just calling it ``weight'' here). The `val()` option is necessary. This part of the command specifies the point estimate for each category of the variables specified earlier. So, for example, the first two numbers are 47 and 53, because on the variable female, we are looking for 47% to be 0 (male) and 53% to be 1 (female). The next two numbers are 12 and 88, because we are looking for 12% to take on a 0 for the white variable (indicating non-white) and 88% to take on a value of 1 (indicating white). And so on...
+This command first identifies the variables on which to weight (`female white black hispanic age18_29 age65_over`). The `gen()` option specifies the name of the weight variable that will be created after this command is executed (I'm just calling it ``weight'' here). The `val()` option is necessary. This part of the command specifies the point estimate for each category of the variables specified earlier. So, for example, the first two numbers are 47 and 53, because on the variable female, we are looking for 47% to be 0 (male) and 53% to be 1 (female). The next two numbers are 12 and 88, because we are looking for 12% to take on a 0 for the white variable (indicating non-white) and 88% to take on a value of 1 (indicating white). And so on...
 
 The `st()` option is used to indicating the starting weight for each observation. You will often not have a starting weight like this, but here we do because the sample is already weighted to account for the stratified cluster sample (captured by the `sampleweight` variable). Finally, `maxit` is simply the maximum number of times that Stata will go through the raking process. It probably makes sense to set this at least to 10, but you may want to set it higher when you are weighting on more variables. 
 
-Once you execute this command, a new variable called `weight` (or whatever you named it) will appear in your dataset. For the exit poll, the weight variable has a mean of 1 (it should always have a mean of 1), a standard deviation of 1.15, and it ranges from .22 to 21.35. Often, pollsters trim their weights to ensure that no single respondent receives too much influence over the point estimates. Only 4 respondents receive a weight in excess of 8, so we might wish to trim the weights at 8, so that nobody receives a weight in excess of 8. To do this, we simply use the `,up()` option in the ipfweight command, as so:
+Once you execute this command, a new variable called `weight` (or whatever you named it) will appear in your dataset. For the exit poll, the weight variable has a mean of 1 (it should always have a mean of 1), a standard deviation of 1.15, and it ranges from .22 to 21.35. Often, pollsters trim their weights to ensure that no single respondent receives too much influence over the point estimates. Only 4 respondents receive a weight in excess of 8, so we might wish to trim the weights at 8, so that nobody receives a weight in excess of 8. To do this, we simply use the `, up()` option in the ipfweight command, as so:
 
 ```
-ipfweight female white black hispanic age18\_29 age65\_over, gen(weighttrimmed) val(47 53 12 88 96 4 95 5 93 7 70 30) maxit(25) up(8) st(sampleweight)
+ipfweight female white black hispanic age18_29 age65_over, gen(weighttrimmed) val(47 53 12 88 96 4 95 5 93 7 70 30) maxit(25) up(8) st(sampleweight)
 ```
 
 
@@ -278,7 +276,7 @@ ipfweight female white black hispanic age18\_29 age65\_over, gen(weighttrimmed) 
 
 * Warshaw, Christopher. 2017. "Latent Constructs in Public Opinion." *The Oxford Handbook of Polling and Polling Methods*. DOI: 10.1093/oxfordhb/9780190213299.013.30
 
-* Maria Orlando Edelen and Bryce B. Reeve. 2007. "Applying item response theory (IRT) modeling to questionnaire development, evaluation, and refinement." *Quality of Life Research* 16: 5 - 18.
+* Edelen, Maria Orlando and Bryce B. Reeve. 2007. "Applying item response theory (IRT) modeling to questionnaire development, evaluation, and refinement." *Quality of Life Research* 16: 5 - 18.
 
 * Treier, Shawn and Simon Jackman. 2008. "Democracy as a Latent Variable." *American Journal of Political Science.* Vol. 52, No. 1, pp. 201-17.
 
@@ -344,9 +342,9 @@ predict intervention2
 
 ![](~/Box Sync/CCES RA/bookdown-stata/Images/factor2.png)
 
-The output here gives a sense of how much each variable contributes to the value of the underlying latent variable (`intervention2`). Note that cc414\_6 gets the least weight, which makes sense since it also had the lowest factor loading. 
+The output here gives a sense of how much each variable contributes to the value of the underlying latent variable (`intervention2`). Note that `cc414_6` gets the least weight, which makes sense since it also had the lowest factor loading. 
 
-The new variable created by this command (`intervention2`) is the underlying latent variable that we are assuming captures one's general support for military interventions. The variable will be created as a standard normal variable, meaning that it's mean will be approximately 0 and it's standard deviation will be approximately 1. Let's take a look at the distribution of this variable:
+The new variable created by this command (`intervention2`) is the underlying latent variable that we are assuming captures one's general support for military interventions. The variable will be created as a standard normal variable, meaning that its mean will be approximately 0 and its standard deviation will be approximately 1. Let's take a look at the distribution of this variable:
 
 ```
 twoway histogram intervention2, percent bc(blue)
@@ -376,9 +374,9 @@ irt 2pl cc414_1-cc414_6
 ![](~/Box Sync/CCES RA/bookdown-stata/Images/irt1.png)
 
 
-As the name of this approach implies, there are two parameters estimated for each item. The first is the discrimination parameter (a). This parameter indicates how highly correlated the item is with the underlying latent variable. For example, cc414_2 and cc414_5 both have discrimination parameters at or above 2, which indicates that those items are particularly valuable for differentiating respondents on the latent trait. These values are similar to factor loadings.
+As the name of this approach implies, there are two parameters estimated for each item. The first is the discrimination parameter. This parameter indicates how highly correlated the item is with the underlying latent variable. For example, `cc414_2` and `cc414_5` both have discrimination parameters at or above 2, which indicates that those items are particularly valuable for differentiating respondents on the latent trait. These values are similar to factor loadings.
 
-The second parameter for each item is the difficulty parameter. This is essentially an intercept for each item -- indicating how frequently the sample, on average, responded positively to the item. For example, the difficulty parameter for cc414_5 (using troops to protect allies who are under attack) indicates that this was the item that respondents most frequently responded "yes" to (and a simple cross tabulation of the items would confirm this). cc414_4 (using troops to assist the spread of democracy) was the item that individuals responded "yes" to least frequently. 
+The second parameter for each item is the difficulty parameter. This is essentially an intercept for each item -- indicating how frequently the sample, on average, responded positively to the item. For example, the difficulty parameter for `cc414_5` (using troops to protect allies who are under attack) indicates that this was the item that respondents most frequently responded "yes" to (and a simple cross tabulation of the items would confirm this). `cc414_4` (using troops to assist the spread of democracy) was the item that individuals responded "yes" to least frequently. 
 
 We can visualize these items with the following command:
 ```
@@ -387,7 +385,7 @@ irtgraph icc
 
 ![](~/Box Sync/CCES RA/bookdown-stata/Images/irt2.png)
 
-This graphic shows the relationship between the latent trait (theta) and the probability of answering "yes" to each of the items. Note that most of the items have a fairly strong correlation with theta, though this is not particularly true for cc414_6 (which also did not load very highly with the others when we conducted the factor analysis); that item has a gradual slope. 
+This graphic shows the relationship between the latent trait (theta) and the probability of answering "yes" to each of the items. Note that most of the items have a fairly strong correlation with theta, though this is not particularly true for `cc414_6` (which also did not load very highly with the others when we conducted the factor analysis); that item has a gradual slope. 
 
 Now, we can turn to generating a variable that captures each individual's value for the underlying latent trait (theta). To do this, we use the `predict` command with the `, latent` option:
 ```
@@ -570,7 +568,7 @@ recode CC308a 1=3 2=2 3=1 4=0 5=., gen(obama_approval)
 
 The most basic way we might try to analyze this data is to take a difference-in-difference approach. Essentially, what we are attempting to discern is whether individuals whose employment situation changes from one wave to the next change their opinions of Obama at a different rate compared to those whose employment situation does not change.
 
- We can do a fairly simple first cut at this analysis through a regression framework. The first thing we need to do is created a lagged version of the employment variable (i.e. whether the person was employed in the previous wave).  
+We can do a fairly simple first cut at this analysis through a regression framework. The first thing we need to do is created a lagged version of the employment variable (i.e. whether the person was employed in the previous wave).  
  
 ```
 gen lagged_employed=l1.employed
@@ -607,9 +605,9 @@ In this section of the course we will learn about the strengths and weaknesses o
 
 * Druckman et al. 2011. *Cambridge Handbook of Experimental Political Science.* Chapters 2-3. 
 
-* Gaines, Brian J., James H. Kuklinski, and Paul J. Quirk. "The logic of the survey experiment reexamined." *Political Analysis.* 15, no. 1 (2007): 1-20.
+* Gaines, Brian J., James H. Kuklinski, and Paul J. Quirk. "The Logic of the Survey Experiment Reexamined." *Political Analysis.* 15, no. 1 (2007): 1-20.
 
-* Barabas, Jason, and Jennifer Jerit. "Are survey experiments externally valid?" *American Political Science Review.* 104, no. 02 (2010): 226-242.
+* Barabas, Jason, and Jennifer Jerit. "Are Survey Experiments Externally Valid?" *American Political Science Review.* 104, no. 02 (2010): 226-242.
 
 * Berinsky, Adam J., Michele F. Margolis, and Michael W. Sances. 2014. "Separating the Shirkers from the Workers? Making Sure Respondents Pay Attention on Self-Administered Surveys." *American Journal of Political Science.* Vol. 58, No. 3, pp 739-753.
 

@@ -25,7 +25,7 @@
 <meta name="author" content="Brian F. Schaffner">
 
 
-<meta name="date" content="2018-02-23">
+<meta name="date" content="2018-02-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -150,7 +150,7 @@
 <p>While there may be some value to having data appear in this format, it is necessary to change to “long” format in order to conduct panel analyses in Stata. Long format means that there is a separate observation for each individual in each year. Thus, what you would end up with for this panel dataset is three observations for each respondent (2010, 2012, and 2014) with one variable for each question that was asked in each of those years. In other words, instead of having <code>CC10_308a</code>, <code>CC12_308a</code>, and <code>CC14_308a</code>, you would want just a single <code>CC_308a</code>. You would then have a caseid variable that is unique to each respondent, and a year variable that indicates which year each variable applies to.</p>
 <p>Once we understand some of the re-naming conventions, it is not particulalry difficult to re-shape the dataset so that it works in this form. The do-file below shows how we would do this with the wide-form panel data. The basic gist is that we would be subsetting the wide-form dataset into three different datasets…one for each wave (or year). We then rename the variables so that they will have the same variable names in each year (e.g. <code>CC_308a</code> instead of <code>CC10_308a</code>, <code>CC12_308a</code>, and <code>CC14_308a</code>).</p>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/longform.png" />
+<img src="Images/longform.png" />
 
 </div>
 <p>Once you have your data set up in long form, you can tell Stata that it is in panel format. To do this, you use the <code>xtset</code> command and then follow that command first with the variable indicating each unique respondent and the variable indicating each time period.</p>
@@ -172,7 +172,7 @@ recode CC308a 1=3 2=2 3=1 4=0 5=., gen(obama_approval)</code></pre>
 <pre><code>reg d1.obama_approval lagged_employed#employed
 margins, over(lagged_employed employed)</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/diff.png" />
+<img src="Images/diff.png" />
 
 </div>
 <p>Using the <code>margins</code> command after the regression provides a very easy way of seeing how approval changes among each of the four groups. For example, there was a .07 point drop in approval among individuals who were unemployed in one time period and stayed unemployed in the next wave. By comparison, approval dropped .048 for those who moved from being unemployed to being employed. Given the size ot the standard errors for these means, there is no significant difference between the two groups. You can also compare people who had a job and lost it to those who had and kept a job. Again, there is no sigificant difference in approval for these groups.</p>
@@ -180,7 +180,7 @@ margins, over(lagged_employed employed)</code></pre>
 <p>Another approach is using panel regression with unit fixed effects. To do this in Stata, we take advantage of the <code>xtreg</code> command.</p>
 <pre><code>xtreg obama_approval employed, fe</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/fixedeffects.png" />
+<img src="Images/fixedeffects.png" />
 
 </div>
 <p>The <code>, fe</code> options specifies a fixed effects model. Essentially, we are controlling for any time-invariant differences across individuals by taking this approach. The information being used to determine the effect of employment status on approval is only for individuals whose employment status changed at some point during the 3 waves. Based on this approach, employment status appears to be unrelated to approval for Obama (based on the coefficient for the employed variable).</p>

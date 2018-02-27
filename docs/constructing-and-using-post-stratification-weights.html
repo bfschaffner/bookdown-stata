@@ -25,7 +25,7 @@
 <meta name="author" content="Brian F. Schaffner">
 
 
-<meta name="date" content="2018-02-23">
+<meta name="date" content="2018-02-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,7 +135,7 @@
 <div id="creating-post-stratification-weights-in-stata" class="section level2">
 <h2><span class="header-section-number">5.1</span> Creating Post-Stratification Weights in Stata</h2>
 <p>If you know the population values of demographics that you wish to weight on, you can create the weights yourself using an approach known as post-stratification raking. There is a user-written program in Stata to allow for the creation of such weights. The function is called <code>ipfweight</code>.</p>
-<p>As an example, we will use the [2014 Massachusetts Exit Poll data] (<a href="http://people.umass.edu/schaffne/mass\_exitpoll\_2014.dta" class="uri">http://people.umass.edu/schaffne/mass\_exitpoll\_2014.dta</a>). The dataset already has a sampling weight included, to adjust for the stratified cluster sample approach taken. However, because of unequal response rates among different demographic groups, we also need to do additional post-stratification weighting. Here is what we know about the demographic composition of the electorate in 2014 according to voting records:</p>
+<p>As an example, we will use the <a href="http://people.umass.edu/schaffne/mass_exitpoll_2014.dta">2014 Massachusetts Exit Poll data</a>. The dataset already has a sampling weight included, to adjust for the stratified cluster sample approach taken. However, because of unequal response rates among different demographic groups, we also need to do additional post-stratification weighting. Here is what we know about the demographic composition of the electorate in 2014 according to voting records:</p>
 <table>
 <thead>
 <tr class="header">
@@ -181,10 +181,10 @@ ren agecat1 age18 29
 ren agecat6 age65 over</code></pre>
 <p>Now, we can use the <code>ipfweight</code> command to weight to the population values. To do this, we use the following command:</p>
 <pre><code>ipfweight female white black hispanic age18_29 age65_over, gen(weight) val(47 53 12 88 96 4 95 5 93 7 70 30) maxit(25) st(sampleweight)</code></pre>
-<p>This command first identifies the variables on which to weight (female, white, black, hispanic, age18_29 and age65_over). The <code>gen()</code> option specifies the name of the weight variable that will be created after this command is executed (I’m just calling it `<code>weight'' here). The</code>val()` option is necessary. This part of the command specifies the point estimate for each category of the variables specified earlier. So, for example, the first two numbers are 47 and 53, because on the variable female, we are looking for 47% to be 0 (male) and 53% to be 1 (female). The next two numbers are 12 and 88, because we are looking for 12% to take on a 0 for the white variable (indicating non-white) and 88% to take on a value of 1 (indicating white). And so on…</p>
+<p>This command first identifies the variables on which to weight (<code>female white black hispanic age18_29 age65_over</code>). The <code>gen()</code> option specifies the name of the weight variable that will be created after this command is executed (I’m just calling it `<code>weight'' here). The</code>val()` option is necessary. This part of the command specifies the point estimate for each category of the variables specified earlier. So, for example, the first two numbers are 47 and 53, because on the variable female, we are looking for 47% to be 0 (male) and 53% to be 1 (female). The next two numbers are 12 and 88, because we are looking for 12% to take on a 0 for the white variable (indicating non-white) and 88% to take on a value of 1 (indicating white). And so on…</p>
 <p>The <code>st()</code> option is used to indicating the starting weight for each observation. You will often not have a starting weight like this, but here we do because the sample is already weighted to account for the stratified cluster sample (captured by the <code>sampleweight</code> variable). Finally, <code>maxit</code> is simply the maximum number of times that Stata will go through the raking process. It probably makes sense to set this at least to 10, but you may want to set it higher when you are weighting on more variables.</p>
-<p>Once you execute this command, a new variable called <code>weight</code> (or whatever you named it) will appear in your dataset. For the exit poll, the weight variable has a mean of 1 (it should always have a mean of 1), a standard deviation of 1.15, and it ranges from .22 to 21.35. Often, pollsters trim their weights to ensure that no single respondent receives too much influence over the point estimates. Only 4 respondents receive a weight in excess of 8, so we might wish to trim the weights at 8, so that nobody receives a weight in excess of 8. To do this, we simply use the <code>,up()</code> option in the ipfweight command, as so:</p>
-<pre><code>ipfweight female white black hispanic age18\_29 age65\_over, gen(weighttrimmed) val(47 53 12 88 96 4 95 5 93 7 70 30) maxit(25) up(8) st(sampleweight)</code></pre>
+<p>Once you execute this command, a new variable called <code>weight</code> (or whatever you named it) will appear in your dataset. For the exit poll, the weight variable has a mean of 1 (it should always have a mean of 1), a standard deviation of 1.15, and it ranges from .22 to 21.35. Often, pollsters trim their weights to ensure that no single respondent receives too much influence over the point estimates. Only 4 respondents receive a weight in excess of 8, so we might wish to trim the weights at 8, so that nobody receives a weight in excess of 8. To do this, we simply use the <code>, up()</code> option in the ipfweight command, as so:</p>
+<pre><code>ipfweight female white black hispanic age18_29 age65_over, gen(weighttrimmed) val(47 53 12 88 96 4 95 5 93 7 70 30) maxit(25) up(8) st(sampleweight)</code></pre>
 </div>
 </div>
             </section>

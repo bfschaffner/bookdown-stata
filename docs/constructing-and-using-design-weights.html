@@ -25,7 +25,7 @@
 <meta name="author" content="Brian F. Schaffner">
 
 
-<meta name="date" content="2018-02-23">
+<meta name="date" content="2018-02-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -136,25 +136,25 @@
 <h2><span class="header-section-number">4.1</span> Background Readings</h2>
 <ul>
 <li><p><a href="http://electionstudies.org/resources/papers/nes012427.pdf">DeBell, Matthew and Jon A. Krosnick. “Computing Weights for American National Election Study Survey Data.”</a></p></li>
-<li><p>Kreuter, F, and Valliant, R., (2007), “A survey on survey statistics: What is done and can be done in Stata.” <em>The Stata Journal</em> Volume 7, Number 1, pages 1 - 21.</p></li>
+<li><p>Kreuter, F, and Valliant, R., (2007), “A Survey on Survey Statistics: What is done and can be done in Stata.” <em>The Stata Journal</em> Volume 7, Number 1, pages 1 - 21.</p></li>
 </ul>
 </div>
 <div id="using-weights-in-stata" class="section level2">
 <h2><span class="header-section-number">4.2</span> Using Weights in Stata</h2>
 <p>In a dataset, survey weights are captured by a variable that indicates how much each respondent should “count.” For example, a respondent who has a 1 for a weight variable would count as a single respondent; a respondent who receives a .5 for a weight variable should count as half a respondent; and a respondent who has a 2 would count as two respondents.</p>
-<p>Stata has four different options for weighting statistical analyses. You can read more about these options by typing <code>help weight</code> into the command line in Stata. However, only two of these weights are relevant for survey data – <code>pweight</code> and <code>aweight</code>. Using <code>aweight</code> and <code>pweight</code> will result in the same point estimates. However, the pweight option is the more correct option because aweight does not calculate the standard errors correctly. However, in some cases you may be forced to use aweights as most, but not all, Stata commands support the pweight option (e.g. graphing options).</p>
-<p>The [2010 UMass Poll Massachusetts Exit Poll] (<a href="http://people.umass.edu/schaffne/mass_exitpoll.dta" class="uri">http://people.umass.edu/schaffne/mass_exitpoll.dta</a>) includes a variable called <code>weight</code>. Respondents in the exit poll were weighted to account for the stratified nature of the sampling procedure. By stratifying towns by geography and other factors, not every voter had an equal chance of being sampled. Thus, the weight variable adjusts for this fact.</p>
+<p>Stata has four different options for weighting statistical analyses. You can read more about these options by typing <code>help weight</code> into the command line in Stata. However, only two of these weights are relevant for survey data – <code>pweight</code> and <code>aweight</code>. Using <code>aweight</code> and <code>pweight</code> will result in the same point estimates. However, the pweight option is the more correct option because aweight does not calculate the standard errors correctly. However, in some cases you may be forced to use aweights as most, but not all, Stata commands support the <code>pweight</code> option (e.g. graphing options).</p>
+<p>The <a href="http://people.umass.edu/schaffne/mass_exitpoll.dta">2010 UMass Poll Massachusetts Exit Poll</a> includes a variable called <code>weight</code>. Respondents in the exit poll were weighted to account for the stratified nature of the sampling procedure. By stratifying towns by geography and other factors, not every voter had an equal chance of being sampled. Thus, the weight variable adjusts for this fact.</p>
 <p>The easiest way to implement sampling weights when conducting statistical analysis is a two-step process. First, just one time at the beginning of your session you need to tell Stata that your dataset includes a weight variable by typing the following command:</p>
 <pre><code>svyset [pw=weight]</code></pre>
 <p><code>svyset</code> is the command, then the rest of the command is in brackets. <code>pw</code> is the type of weight being used (it should always be <code>pw</code> for survey data) and <code>weight</code> is the name of the variable that includes the information needed to weight the data.</p>
 <p>Once you have done this, Stata now knows which variable to use to weight the data (and how to apply those weights). However, you still have to ask Stata to weight the data whenever you run an analysis. For example, let’s say we wanted to look at the vote for Governor. If we just tabulated the variable, we would get the following:</p>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/weights1.png" />
+<img src="Images/weights1.png" />
 
 </div>
 <p>However, the above tabulation does not weight the data to adjust for the sampling approach. To do this, you need to use <code>svy:</code> as a prefix to whatever command you are trying to use. So, now you can do the same tabulation but apply the weights to it:</p>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/weights2.png" />
+<img src="Images/weights2.png" />
 
 </div>
 <p>Notice that applying the weights had a pretty big effect on the results. With the sampling weight accounted for, Patrick receives 52% of the vote, much closer to what he actually received in the election.</p>

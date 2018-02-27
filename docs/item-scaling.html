@@ -25,7 +25,7 @@
 <meta name="author" content="Brian F. Schaffner">
 
 
-<meta name="date" content="2018-02-23">
+<meta name="date" content="2018-02-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -136,7 +136,7 @@
 <h2><span class="header-section-number">6.1</span> Background Readings</h2>
 <ul>
 <li><p>Warshaw, Christopher. 2017. “Latent Constructs in Public Opinion.” <em>The Oxford Handbook of Polling and Polling Methods</em>. DOI: 10.1093/oxfordhb/9780190213299.013.30</p></li>
-<li><p>Maria Orlando Edelen and Bryce B. Reeve. 2007. “Applying item response theory (IRT) modeling to questionnaire development, evaluation, and refinement.” <em>Quality of Life Research</em> 16: 5 - 18.</p></li>
+<li><p>Edelen, Maria Orlando and Bryce B. Reeve. 2007. “Applying item response theory (IRT) modeling to questionnaire development, evaluation, and refinement.” <em>Quality of Life Research</em> 16: 5 - 18.</p></li>
 <li><p>Treier, Shawn and Simon Jackman. 2008. “Democracy as a Latent Variable.” <em>American Journal of Political Science.</em> Vol. 52, No. 1, pp. 201-17.</p></li>
 </ul>
 </div>
@@ -187,14 +187,14 @@
 <p>To create the index using <code>alpha</code>, we would use the following command:</p>
 <pre><code>alpha cc414 1 cc414 2 cc414 3 cc414 4 cc414 5 cc414 6, gen(intervention)</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/alpha.png" />
+<img src="Images/alpha.png" />
 
 </div>
 <p>The <code>alpha</code> command has Stata indicate the reliability for a set of measures; that is, it indicates the extent to which the variables are measuring the same concept. In this case, our items receive a reliability value of .58, which is not particularly high. We added an option to the command: <code>gen()</code> tells Stata to combine the measures into a single measure that is simply the average value of the other variables. We can think of this variable as the underlying support for military interventions.</p>
 <p>You can see how this variable is distributed:</p>
 <pre><code>twoway histogram intervention, percent bc(blue)</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/alpha_histogram.png" />
+<img src="Images/alpha_histogram.png" />
 
 </div>
 <p>This can simply be interpreted as the proportion of times that respondents supported military intervention. Note that very few supported all reasons for an intervention, and the mode was .5 (half of the situations).</p>
@@ -204,27 +204,27 @@
 <p>Alpha essentially creates a simple addititve index. But a second way to combine these variables is through a factor analysis. Factor analysis potentially provides more information because it allows some items to have more influence over the latent (index) variable than others. To run a factor analysis use the <code>factor</code> command:</p>
 <pre><code>factor cc414_1 cc414_2 cc414_3 cc414_4 cc414_5 cc414_6</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/factor.png" />
+<img src="Images/factor.png" />
 
 </div>
 <p>There are two things to look at here. First, the Eigenvalue for the first factor is above 1, which tells us that there is some underlying latent variable that the combination of these variables are jointly measuring. Second, the factor loadings for that first factor are above .3 for all but the sixth variable. Generally, we might drop a variable from our factor analysis if its loading was less than .3 and we did not have a great theoretical reason for it to be there. But in this case we’ll go ahead and keep it in.</p>
 <p>So let’s go ahead and use the <code>predict</code> command to generate our new variable that combines the measures of intervention.</p>
 <pre><code>predict intervention2</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/factor2.png" />
+<img src="Images/factor2.png" />
 
 </div>
-<p>The output here gives a sense of how much each variable contributes to the value of the underlying latent variable (<code>intervention2</code>). Note that cc414_6 gets the least weight, which makes sense since it also had the lowest factor loading.</p>
-<p>The new variable created by this command (<code>intervention2</code>) is the underlying latent variable that we are assuming captures one’s general support for military interventions. The variable will be created as a standard normal variable, meaning that it’s mean will be approximately 0 and it’s standard deviation will be approximately 1. Let’s take a look at the distribution of this variable:</p>
+<p>The output here gives a sense of how much each variable contributes to the value of the underlying latent variable (<code>intervention2</code>). Note that <code>cc414_6</code> gets the least weight, which makes sense since it also had the lowest factor loading.</p>
+<p>The new variable created by this command (<code>intervention2</code>) is the underlying latent variable that we are assuming captures one’s general support for military interventions. The variable will be created as a standard normal variable, meaning that its mean will be approximately 0 and its standard deviation will be approximately 1. Let’s take a look at the distribution of this variable:</p>
 <pre><code>twoway histogram intervention2, percent bc(blue)</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/factor_histogram.png" />
+<img src="Images/factor_histogram.png" />
 
 </div>
 <p>Note that the distribution of this variable looks quite a bit different from the one we just created with the <code>alpha</code> command. Despite this fact, the measures are fairly highly correlated (at .98). See the scatterplot below. The key difference is that the factor analysis provides a bit more gradation in the measure compared to just averaging the measures.</p>
 <pre><code>twoway scatter intervention intervention2, aspect(1) ytitle(&quot;Alpha created measure&quot;) xtitle(&quot;Factor analysis created measure&quot;)</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/alpha_factor_scatter.png" />
+<img src="Images/alpha_factor_scatter.png" />
 
 </div>
 </div>
@@ -235,21 +235,21 @@
 <p>To run the model, we use the following command:</p>
 <pre><code>irt 2pl cc414_1-cc414_6</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/irt1.png" />
+<img src="Images/irt1.png" />
 
 </div>
-<p>As the name of this approach implies, there are two parameters estimated for each item. The first is the discrimination parameter (a). This parameter indicates how highly correlated the item is with the underlying latent variable. For example, cc414_2 and cc414_5 both have discrimination parameters at or above 2, which indicates that those items are particularly valuable for differentiating respondents on the latent trait. These values are similar to factor loadings.</p>
-<p>The second parameter for each item is the difficulty parameter. This is essentially an intercept for each item – indicating how frequently the sample, on average, responded positively to the item. For example, the difficulty parameter for cc414_5 (using troops to protect allies who are under attack) indicates that this was the item that respondents most frequently responded “yes” to (and a simple cross tabulation of the items would confirm this). cc414_4 (using troops to assist the spread of democracy) was the item that individuals responded “yes” to least frequently.</p>
+<p>As the name of this approach implies, there are two parameters estimated for each item. The first is the discrimination parameter. This parameter indicates how highly correlated the item is with the underlying latent variable. For example, <code>cc414_2</code> and <code>cc414_5</code> both have discrimination parameters at or above 2, which indicates that those items are particularly valuable for differentiating respondents on the latent trait. These values are similar to factor loadings.</p>
+<p>The second parameter for each item is the difficulty parameter. This is essentially an intercept for each item – indicating how frequently the sample, on average, responded positively to the item. For example, the difficulty parameter for <code>cc414_5</code> (using troops to protect allies who are under attack) indicates that this was the item that respondents most frequently responded “yes” to (and a simple cross tabulation of the items would confirm this). <code>cc414_4</code> (using troops to assist the spread of democracy) was the item that individuals responded “yes” to least frequently.</p>
 <p>We can visualize these items with the following command:</p>
 <pre><code>irtgraph icc</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/irt2.png" />
+<img src="Images/irt2.png" />
 
 </div>
-<p>This graphic shows the relationship between the latent trait (theta) and the probability of answering “yes” to each of the items. Note that most of the items have a fairly strong correlation with theta, though this is not particularly true for cc414_6 (which also did not load very highly with the others when we conducted the factor analysis); that item has a gradual slope.</p>
+<p>This graphic shows the relationship between the latent trait (theta) and the probability of answering “yes” to each of the items. Note that most of the items have a fairly strong correlation with theta, though this is not particularly true for <code>cc414_6</code> (which also did not load very highly with the others when we conducted the factor analysis); that item has a gradual slope.</p>
 <p>Now, we can turn to generating a variable that captures each individual’s value for the underlying latent trait (theta). To do this, we use the <code>predict</code> command with the <code>, latent</code> option:</p>
 <pre><code>predict intervention3, latent</code></pre>
-<p>And just for fun, let’s see how this compares to the latent variable created through factor analysis: <img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/factor_irt_scatter.png" /></p>
+<p>And just for fun, let’s see how this compares to the latent variable created through factor analysis: <img src="Images/factor_irt_scatter.png" /></p>
 <p>These are highly correlated (at .996), so at least in this case, it would not have mattered much if you had used IRT or factor analysis.</p>
 </div>
 </div>

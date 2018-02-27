@@ -25,7 +25,7 @@
 <meta name="author" content="Brian F. Schaffner">
 
 
-<meta name="date" content="2018-02-23">
+<meta name="date" content="2018-02-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -144,7 +144,7 @@
 <p>Let’s imagine that we want to know whether having children makes an individual more likely to support the Children’s Health Insurance policy (variable <code>cc332b</code>). We could simply do a cross-tabulation of having children and support for the policy. In a set-up like this one, we are essentially treating having a child as the treatment and one’s opinion on the insurance program is the outcome variable.</p>
 <pre><code>svy: tab cc332b v242, col</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/match1.png" />
+<img src="Images/match1.png" />
 
 </div>
 <p>Based on this simple bivariate analysis, it appears as though inviduals who have children are about 5 points more supportive of the children’s insurance program (p&lt;.001). But, of course, having children is not randomly assigned, so there may be many ways in which those with children are different from those without them, and we would want to be sure to account for these factors when making this comparison. We would want to account for as many of those factors as possible when making this comparison.</p>
@@ -190,26 +190,26 @@ recode v211 2/9=0, gen(white)</code></pre>
 <p>Before we do the matching, let’s take a look at just how imbalanced our control and treatment groups are. We can do this by using the <code>imb</code> command:</p>
 <pre><code>imb white interest v207, treatment(kids)</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/imb.png" />
+<img src="Images/imb.png" />
 
 </div>
 <p>The main statistic to look at here is the L1 value. The L1 statistic takes on values ranging from 0 to 1, indicating the degree of imbalance on the variables specified. We will keep this value of L1 in mind to see how much we can reduce the imbalance by matching.</p>
 <p>Now go ahead and conduct the matching:</p>
 <pre><code>cem white (#0) interest (#0) v207, treatment(kids)</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/cem.png" />
+<img src="Images/cem.png" />
 
 </div>
 <p>Note that the L1 statistic is now just .09. So we have brought it very close to 0, and far away from the the degree of imbalance we had before matching. We can also see that we were able to find a match for most cases in our data (only 184 unmatched cases). Note that L1 is smallest for the two variables on which we did exact matching (white and interest).</p>
 <p>After conducting the <code>cem</code>, we now have three new variables in our dataset. <code>cem_matched</code> is simply an indicator of which cases were matched versus unmatched. The most important variable is <code>cem_weights</code>. Unless you chose to do a <code>k2k</code> match, it will be crucial to use the weights in your analyses. However, you must use these as <code>iweight</code>s. So, now let’s examine the effect of having kids both before matching and after matching:</p>
 <pre><code>reg chip kids</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/cemreg1.png" />
+<img src="Images/cemreg1.png" />
 
 </div>
 <pre><code>reg chip kids [iw=cem_weights]</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/cemreg2.png" />
+<img src="Images/cemreg2.png" />
 
 </div>
 <p>The second solution is the one that incorporates the matching, through the implementation of the weights. Note that the statistically significant difference of 5.6 points observed before matching vanishes once we do the matching. In that analysis, there is a very small and statistically indistinguishable difference between those who do and do not have kids when it comes to attitudes towards the children’s health insurance policy.</p>
@@ -217,7 +217,7 @@ recode v211 2/9=0, gen(white)</code></pre>
 <pre><code>cem white (#0) interest (#0) v207, treatment(kids) k2k
 reg chip kids if cem_matched==1</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/cemreg3.png" />
+<img src="Images/cemreg3.png" />
 
 </div>
 </div>
@@ -225,13 +225,13 @@ reg chip kids if cem_matched==1</code></pre>
 <h2><span class="header-section-number">7.4</span> Entropy Balancing</h2>
 <p>Entropy balancing is an alternative approach to producing balance between the treatment and control groups. This is done by weighting the observations to produce balance on the variables specified. If we wanted to balance the control and treatment groups using <code>ebalance</code>, we would type the following:</p>
 <pre><code>ebalance kids white interest v207</code></pre>
-<p>Note that the treatment variable must come first, after the <code>ebalance</code> command. Then you include the co-variates on which you wish to balance. This produces the following output: <img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/ebalance.png" /></p>
+<p>Note that the treatment variable must come first, after the <code>ebalance</code> command. Then you include the co-variates on which you wish to balance. This produces the following output: <img src="Images/ebalance.png" /></p>
 <p>This output confirms which variable is being used as the treatment and which variables are being used to balance. It then shows summary information about the variables in the treatment and control conditions before and after the new weights are applied.</p>
 <p>This command produces a new variable in your dataset called <code>_webal</code>. You can now use this variable just as you would any other weight variable. So, let’s run the analysis from above, but this time using the weights from entropy balancing:</p>
 <pre><code>svyset [pw=_webal]
 svy: reg chip kids</code></pre>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/ebalancereg.png" />
+<img src="Images/ebalancereg.png" />
 
 </div>
 <p>Again, the conclusion derived from this analysis is that having children has no impact on one’s attitude toward the children’s health insurance program.</p>
@@ -239,7 +239,7 @@ svy: reg chip kids</code></pre>
 <pre><code>ebalance kids white interest v207, basew(v101)</code></pre>
 <p>Using these new entropy balancing weights changes the results only marginally:</p>
 <div class="figure">
-<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/bookdown-stata/Images/ebalancereg2.png" />
+<img src="Images/ebalancereg2.png" />
 
 </div>
 </div>
