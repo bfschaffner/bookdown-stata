@@ -25,15 +25,15 @@
 <meta name="author" content="Brian F. Schaffner">
 
 
-<meta name="date" content="2018-02-27">
+<meta name="date" content="2018-03-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="constructing-and-using-post-stratification-weights.html">
-<link rel="next" href="matching-and-balancing-techniques.html">
+<link rel="prev" href="post-stratification-weights.html">
+<link rel="next" href="matching-and-balancing.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -66,50 +66,29 @@
 <li><a href="./">Advanced Survey Data Analysis & Survey Experiments</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#about-this-course"><i class="fa fa-check"></i><b>1.1</b> About this Course</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html"><i class="fa fa-check"></i><b>2</b> Models for Limited Dependent Variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#logit"><i class="fa fa-check"></i><b>2.1</b> Logit</a></li>
+<li class="chapter" data-level="2.2" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#ordinal-logit"><i class="fa fa-check"></i><b>2.2</b> Ordinal Logit</a></li>
+<li class="chapter" data-level="2.3" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#multinomial-logit"><i class="fa fa-check"></i><b>2.3</b> Multinomial Logit</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html"><i class="fa fa-check"></i><b>2</b> Background on Survey Design &amp; Analysis</a><ul>
-<li class="chapter" data-level="2.1" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#background-readings"><i class="fa fa-check"></i><b>2.1</b> Background Readings</a></li>
-<li class="chapter" data-level="2.2" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#analysis-refresher-logit"><i class="fa fa-check"></i><b>2.2</b> Analysis Refresher – Logit</a></li>
-<li class="chapter" data-level="2.3" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#ordinal-logit-probit"><i class="fa fa-check"></i><b>2.3</b> Ordinal Logit / Probit</a></li>
-<li class="chapter" data-level="2.4" data-path="background-on-survey-design-analysis.html"><a href="background-on-survey-design-analysis.html#multinomial-logit"><i class="fa fa-check"></i><b>2.4</b> Multinomial Logit</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html"><i class="fa fa-check"></i><b>3</b> Approaches to Sampling</a><ul>
-<li class="chapter" data-level="3.1" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#background-readings-1"><i class="fa fa-check"></i><b>3.1</b> Background Readings</a></li>
-<li class="chapter" data-level="3.2" data-path="approaches-to-sampling.html"><a href="approaches-to-sampling.html#sampling-in-stata"><i class="fa fa-check"></i><b>3.2</b> Sampling in Stata</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html"><i class="fa fa-check"></i><b>4</b> Constructing and Using Design Weights</a><ul>
-<li class="chapter" data-level="4.1" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#background-readings-2"><i class="fa fa-check"></i><b>4.1</b> Background Readings</a></li>
-<li class="chapter" data-level="4.2" data-path="constructing-and-using-design-weights.html"><a href="constructing-and-using-design-weights.html#using-weights-in-stata"><i class="fa fa-check"></i><b>4.2</b> Using Weights in Stata</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Constructing and Using Post-Stratification Weights</a><ul>
-<li class="chapter" data-level="5.1" data-path="constructing-and-using-post-stratification-weights.html"><a href="constructing-and-using-post-stratification-weights.html#creating-post-stratification-weights-in-stata"><i class="fa fa-check"></i><b>5.1</b> Creating Post-Stratification Weights in Stata</a></li>
-</ul></li>
+<li class="chapter" data-level="3" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>3</b> Sampling</a></li>
+<li class="chapter" data-level="4" data-path="design-weights.html"><a href="design-weights.html"><i class="fa fa-check"></i><b>4</b> Design Weights</a></li>
+<li class="chapter" data-level="5" data-path="post-stratification-weights.html"><a href="post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Post-Stratification Weights</a></li>
 <li class="chapter" data-level="6" data-path="item-scaling.html"><a href="item-scaling.html"><i class="fa fa-check"></i><b>6</b> Item Scaling</a><ul>
-<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#background-readings-3"><i class="fa fa-check"></i><b>6.1</b> Background Readings</a></li>
-<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#scaling-items-in-stata"><i class="fa fa-check"></i><b>6.2</b> Scaling Items in Stata</a></li>
-<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#simple-index-using-alpha"><i class="fa fa-check"></i><b>6.3</b> Simple Index using <code>alpha</code></a></li>
-<li class="chapter" data-level="6.4" data-path="item-scaling.html"><a href="item-scaling.html#index-using-factor-analysis-factor"><i class="fa fa-check"></i><b>6.4</b> Index using Factor Analysis <code>factor</code></a></li>
-<li class="chapter" data-level="6.5" data-path="item-scaling.html"><a href="item-scaling.html#using-irt-to-create-a-scale"><i class="fa fa-check"></i><b>6.5</b> Using IRT to Create a Scale</a></li>
+<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#alpha"><i class="fa fa-check"></i><b>6.1</b> Alpha</a></li>
+<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#factor-analysis"><i class="fa fa-check"></i><b>6.2</b> Factor Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#irt"><i class="fa fa-check"></i><b>6.3</b> IRT</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing Techniques</a><ul>
-<li class="chapter" data-level="7.1" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#background-readings-4"><i class="fa fa-check"></i><b>7.1</b> Background Readings</a></li>
-<li class="chapter" data-level="7.2" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#two-approaches-to-matchingbalancing-in-stata"><i class="fa fa-check"></i><b>7.2</b> Two Approaches to Matching/Balancing in Stata</a></li>
-<li class="chapter" data-level="7.3" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.3</b> Coarsened Exact Matching</a></li>
-<li class="chapter" data-level="7.4" data-path="matching-and-balancing-techniques.html"><a href="matching-and-balancing-techniques.html#entropy-balancing"><i class="fa fa-check"></i><b>7.4</b> Entropy Balancing</a></li>
+<li class="chapter" data-level="7" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing</a><ul>
+<li class="chapter" data-level="7.1" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.1</b> Coarsened Exact Matching</a></li>
+<li class="chapter" data-level="7.2" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html#entropy-balancing"><i class="fa fa-check"></i><b>7.2</b> Entropy Balancing</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html"><i class="fa fa-check"></i><b>8</b> Construction and Analysis of Panel Data</a><ul>
-<li class="chapter" data-level="8.1" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#background-readings-5"><i class="fa fa-check"></i><b>8.1</b> Background Readings</a></li>
-<li class="chapter" data-level="8.2" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#analyzing-panel-data-in-stata"><i class="fa fa-check"></i><b>8.2</b> Analyzing Panel Data in Stata</a></li>
-<li class="chapter" data-level="8.3" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.3</b> Reshaping Data</a></li>
-<li class="chapter" data-level="8.4" data-path="construction-and-analysis-of-panel-data.html"><a href="construction-and-analysis-of-panel-data.html#simple-panel-analysis-commands"><i class="fa fa-check"></i><b>8.4</b> Simple Panel Analysis Commands</a></li>
+<li class="chapter" data-level="8" data-path="panel-data.html"><a href="panel-data.html"><i class="fa fa-check"></i><b>8</b> Panel Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="panel-data.html"><a href="panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.1</b> Reshaping Data</a></li>
+<li class="chapter" data-level="8.2" data-path="panel-data.html"><a href="panel-data.html#panel-analysis"><i class="fa fa-check"></i><b>8.2</b> Panel Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a><ul>
-<li class="chapter" data-level="9.1" data-path="survey-experiments.html"><a href="survey-experiments.html#background-readings-6"><i class="fa fa-check"></i><b>9.1</b> Background Readings</a></li>
-<li class="chapter" data-level="9.2" data-path="survey-experiments.html"><a href="survey-experiments.html#analyzing-and-presenting-results-from-survey-experiments"><i class="fa fa-check"></i><b>9.2</b> Analyzing and Presenting Results from Survey Experiments</a></li>
-</ul></li>
+<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -132,16 +111,6 @@
             <section class="normal" id="section-">
 <div id="item-scaling" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Item Scaling</h1>
-<div id="background-readings-3" class="section level2">
-<h2><span class="header-section-number">6.1</span> Background Readings</h2>
-<ul>
-<li><p>Warshaw, Christopher. 2017. “Latent Constructs in Public Opinion.” <em>The Oxford Handbook of Polling and Polling Methods</em>. DOI: 10.1093/oxfordhb/9780190213299.013.30</p></li>
-<li><p>Edelen, Maria Orlando and Bryce B. Reeve. 2007. “Applying item response theory (IRT) modeling to questionnaire development, evaluation, and refinement.” <em>Quality of Life Research</em> 16: 5 - 18.</p></li>
-<li><p>Treier, Shawn and Simon Jackman. 2008. “Democracy as a Latent Variable.” <em>American Journal of Political Science.</em> Vol. 52, No. 1, pp. 201-17.</p></li>
-</ul>
-</div>
-<div id="scaling-items-in-stata" class="section level2">
-<h2><span class="header-section-number">6.2</span> Scaling Items in Stata</h2>
 <p>In the 2010 CCES, respondents were asked to indicate whether they would support using U.S. troops to support each of the following objectives. The objectives were:</p>
 <table>
 <thead>
@@ -180,9 +149,8 @@
 <p>Responses are coded as either “1” if they support the use of troops in that situation and “2” if they do not. Let’s start by re-coding these so that “0” is the code for those who do not support using troops in that situation.</p>
 <pre><code>recode cc414 1 cc414 2 cc414 3 cc414 4 cc414 5 cc414 6 (2=0)</code></pre>
 <p>In the following sections, we examine three methods of combining these six items into a single scale measuring attitudes toward immigration policy.</p>
-</div>
-<div id="simple-index-using-alpha" class="section level2">
-<h2><span class="header-section-number">6.3</span> Simple Index using <code>alpha</code></h2>
+<div id="alpha" class="section level2">
+<h2><span class="header-section-number">6.1</span> Alpha</h2>
 <p>We want to see whether the variables are measuring the same concept. We could do this either by creating a simple index with the <code>alpha</code> command or by creating the index using factor analysis.</p>
 <p>To create the index using <code>alpha</code>, we would use the following command:</p>
 <pre><code>alpha cc414 1 cc414 2 cc414 3 cc414 4 cc414 5 cc414 6, gen(intervention)</code></pre>
@@ -199,9 +167,9 @@
 </div>
 <p>This can simply be interpreted as the proportion of times that respondents supported military intervention. Note that very few supported all reasons for an intervention, and the mode was .5 (half of the situations).</p>
 </div>
-<div id="index-using-factor-analysis-factor" class="section level2">
-<h2><span class="header-section-number">6.4</span> Index using Factor Analysis <code>factor</code></h2>
-<p>Alpha essentially creates a simple addititve index. But a second way to combine these variables is through a factor analysis. Factor analysis potentially provides more information because it allows some items to have more influence over the latent (index) variable than others. To run a factor analysis use the <code>factor</code> command:</p>
+<div id="factor-analysis" class="section level2">
+<h2><span class="header-section-number">6.2</span> Factor Analysis</h2>
+<p>Alpha essentially creates a simple additive index. But a second way to combine these variables is through a factor analysis. Factor analysis potentially provides more information because it allows some items to have more influence over the latent (index) variable than others. To run a factor analysis use the <code>factor</code> command:</p>
 <pre><code>factor cc414_1 cc414_2 cc414_3 cc414_4 cc414_5 cc414_6</code></pre>
 <div class="figure">
 <img src="Images/factor.png" />
@@ -228,8 +196,8 @@
 
 </div>
 </div>
-<div id="using-irt-to-create-a-scale" class="section level2">
-<h2><span class="header-section-number">6.5</span> Using IRT to Create a Scale</h2>
+<div id="irt" class="section level2">
+<h2><span class="header-section-number">6.3</span> IRT</h2>
 <p>Item response theory (IRT) is another approach to scaling indicators, with its foundations coming from research on testing. Unlike factor analysis, the IRT approach assumes that the items are capturing a single underlying latent variable. IRT is also specifically designed for binary or categorical items. Like factor analysis, IRT allows for some variables to contribute more to determining that latent variable.</p>
 <p>Stata 14 includes a family of IRT approaches. The approach we will use here (2 parameter logit - <code>2pl</code>) is designed for binary items and allows for each item to contribute differently to the construction of the underlying latent variable.</p>
 <p>To run the model, we use the following command:</p>
@@ -258,8 +226,8 @@
           </div>
         </div>
       </div>
-<a href="constructing-and-using-post-stratification-weights.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="matching-and-balancing-techniques.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="post-stratification-weights.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="matching-and-balancing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

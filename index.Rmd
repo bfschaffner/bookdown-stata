@@ -11,27 +11,14 @@ github-repo: davidjbarney/bookdown-stata
 ---
 
 # Introduction
+This website details various aspects of advanced survey design and analysis using cross-sectional, panel, and experimental data. Most of the examples here will utilize data from the Cooperative Congressional Election Study, a large-scale survey of Americans that has been conducted annually since 2005. 
 
-## About this Course
+The tutorials included here make use of the Stata statistical software. However, there is a parallel packet available for R users available in PDF form which can be found online [here](http://www.miacosta.com/blog).
 
-This course will focus on various aspects of advanced survey design and analysis, with a particular focus at the end of the course on survey experiments. Most of the examples here will utilize data from the Cooperative Congressional Election Study, a large-scale survey of Americans that has been conducted annually since 2005. I have been a co-PI on this survey project since 2010. I am also the Director (and founder) of UMass Poll, a survey organization housed at the University of Massachusetts Amherst.
+# Models for Limited Dependent Variables
 
-This course will focus heavily on "engaged" activities to help you learn approaches and techniques. Each topic will include examples that involve analyzing existing survey data; the techniques illustrated here may also be applied to your own survey data. For each topic, I have listed some recommended background readings. I would stronlgy encourage you to do this reading before each module of this packet. Most of these readings should be easily available on-line.
-
-## Software
-
-This packet and the course instruction will primarily make use of the Stata statistical software. However, there is a parallel packet available for R users available in PDF form which can be found online [here](http://www.miacosta.com/blog).
-
-# Background on Survey Design & Analysis
-
-## Background Readings
-
-* Krosnick, Jon A. "Survey Research."" *Annual Review of Psychology* 50.1 (1999): 537-567.
-
-* Berinsky, Adam. "Measuring Public Opinion with Surveys."" *Annual Review of Political Science* 20 (2017): 309-29.
-
-## Analysis Refresher -- Logit 
-Open the 2008 Cooperative Congressional Election Study dataset from my website and recode some of the variables so that they will be appropriately coded:
+## Logit 
+Open the 2008 Cooperative Congressional Election Study dataset and recode some of the variables so that they will be appropriately coded:
 
 ```
 use http://people.umass.edu/schaffne/cces08.dta
@@ -49,7 +36,7 @@ logit stemcell pid ideology education
 
 ![](~/Box Sync/CCES RA/bookdown-stata/Images/logit1.png) 
 
-It is important to keep in mind that the coefficients are not easily interpreted in the way that OLS coefficients are. You can ask Stata to give you odds ratios instead of coefficients by adding `or` to the end of your logit command. 
+It is important to keep in mind that the coefficients are not easily interpreted in the way that OLS coefficients are. You can ask Stata to give you odds ratios instead of coefficients by adding `, or` to the end of your logit command. 
 
 ```
 logit stemcell pid ideology education, or
@@ -61,7 +48,7 @@ You can interpret the odds ratios a bit more easily. For example, you could inte
 
 Now, let's return to interpreting those coefficients. While odds ratios are fairly easy to calculate, they probably aren't the best way to talk about the effects of the coefficients. More ideal and easy to understand are predicted probabilities. You can generate and plot these using the `margins` and `marginsplot` commands.
 
-First, `margins` will return a list of predicted probabilities under different conditions that you can specify. For example, if you wanted to know the probability that an individual who is "very liberal"" on the ideology measure and average on the other covariates would support funding for stem cell research you could use this command:
+First, `margins` will return a list of predicted probabilities under different conditions that you can specify. For example, if you wanted to know the probability that an individual who is "very liberal" on the ideology measure and average on the other covariates would support funding for stem cell research you could use this command:
 
 ```
 margins, at(ideology=1)  atmeans
@@ -76,7 +63,7 @@ Now what if you want to plot the predicted probabilities across all values of id
 margins, at(ideology=(1(1)5))  atmeans
 ```
 
-Note that the command above asks for predictions of support for stem cell research at every value between 1 and 5 in 1 point increments (this is the clause `ideology=(1(1)5))`. 
+Note that the command above asks for predictions of support for stem cell research at every value between 1 and 5 in 1 point increments (this is the clause `ideology=(1(1)5)`). 
 
 ![](~/Box Sync/CCES RA/bookdown-stata/Images/logit4.png)
 
@@ -87,7 +74,7 @@ Now, you can use the `marginsplot` command to plot these predicted probabilities
 marginsplot
 ```
 
-![](~/Box Sync/CCES RA/bookdown-stata/Imageslogitgraph1.png)
+![](~/Box Sync/CCES RA/bookdown-stata/Images/logitgraph1.png)
 
 
 And now if we want to clean this graph up a bit, we can do that by adding some options to re-name the axis and graph titles:
@@ -99,12 +86,12 @@ marginsplot, ytitle("Prob. of supporting funding for stem cell research") xtitle
 ![](~/Box Sync/CCES RA/Online Survey Packet/Images/logitgraph2.png)
 
 
-## Ordinal Logit / Probit
-An ordinal logit model is used when you have a dependent variable that takes on more than two categories and those categories are ordered. For example, Likert scales, common in survey research, are an example of ordered dependent variables.
+## Ordinal Logit
+An ordinal logit model is used when you have a dependent variable that takes on more than two categories and those categories are ordered. For example, Likert scales, common in survey research, are ordered dependent variables.
 
 The command to estimate an ordinal logit model in Stata is `ologit`. 
 
-In the 2008 CCES dataset, there is a question asking respondents their views on Affirmative Action policies (`cc313`). Respondents can indicate their support for such policies on a four point scale, ranging from 1 ("Strongly support"") to 4 ("Strongly oppose""). One could collapse these categories into "support"" or "oppose,"" but why throw away detail about the strength of support?
+In the 2008 CCES dataset, there is a question asking respondents their views on Affirmative Action policies (`cc313`). Respondents can indicate their support for such policies on a four point scale, ranging from 1 ("Strongly support") to 4 ("Strongly oppose"). One could collapse these categories into "support" or "oppose," but why throw away detail about the strength of support?
 
 To estimate an ordinal logit model on this question, you could use the following command:
 
@@ -149,20 +136,7 @@ marginsplot, ytitle("Probability"") xtitle("Ideology") title("")  legend(order(1
 
 The graphic shows that most of the effect of ideology occurs in choosing between the "cut defense" and "cut domestic" categories. Almost everyone, regardless of ideology, prefers to not raise taxes. 
 
-#Approaches to Sampling
-
-##Background Readings
-* Lohr, Sharon. *Sampling: Design and Analysis.* Chapter 1. 
-
-* Frankel, Martin R., and Lester R. Frankel. ``Fifty Years of Survey Sampling in the United States." *Public Opinion Quarterly* (1987): S127-S138.
-
-* Brick, J. Michael. ``The Future of Survey Sampling." *Public Opinion Quarterly* 75.5 (2011): 872-888.
-
-* Baker, Reg, et al. ``Summary Report of the AAPOR Task Force on Non-probability Sampling." *Journal of Survey Statistics and Methodology* (2013). (And read subsequent commentary)
-
-* Ansolabehere, Stephen, and Brian F. Schaffner. "Does survey mode still matter? Findings from a 2010 multi-mode comparison." *Political Analysis* (2014).
-
-## Sampling in Stata
+#Sampling
 One can use almost any program to draw a random sample. In Stata, you could write your own basic program to sample observations, making use of Stata's random number generator (e.g. `gen random=runiform()`). However, there is also a useful packaged program that streamlines the process for you and makes it easier to do sampling proportional to size -- `samplepps`. 
 
 Let's start by opening a dataset that is a list of most of the local communities (towns and cities) in the United States. 
@@ -191,15 +165,7 @@ Now, if you want to see the impact of sampling proportional to size versus just 
 
 Finally, it is worth noting that you can use `if` commands with `samplepps`, and this can come in handy if you want to do stratified sampling. For example, in this dataset, some regions have many more communities than others. But you could use the `if` command to sample within each region (one region at a time).
 
-# Constructing and Using Design Weights
-
-## Background Readings
-
-* [DeBell, Matthew and Jon A. Krosnick. "Computing Weights for American National Election Study Survey Data."](http://electionstudies.org/resources/papers/nes012427.pdf)
-
-* Kreuter, F, and Valliant, R., (2007), "A Survey on Survey Statistics: What is done and can be done in Stata." *The Stata Journal* Volume 7, Number 1, pages 1 - 21.
-
-## Using Weights in Stata
+# Design Weights
 In a dataset, survey weights are captured by a variable that indicates how much each respondent should "count." For example, a respondent who has a 1 for a weight variable would count as a single respondent; a respondent who receives a .5 for a weight variable should count as half a respondent; and a respondent who has a 2 would count as two respondents. 
 
 Stata has four different options for weighting statistical analyses. You can read more about these options by typing `help weight` into the command line in Stata. However, only two of these weights are relevant for survey data -- `pweight` and `aweight`. Using `aweight` and `pweight` will result in the same point estimates. However, the pweight option is the more correct option because aweight does not calculate the standard errors correctly. However, in some cases you may be forced to use aweights as most, but not all, Stata commands support the `pweight` option (e.g. graphing options).
@@ -225,9 +191,7 @@ However, the above tabulation does not weight the data to adjust for the samplin
 Notice that applying the weights had a pretty big effect on the results. With the sampling weight accounted for, Patrick receives 52% of the vote, much closer to what he actually received in the election.
 
 
-#Constructing and Using Post-Stratification Weights
-
-##Creating Post-Stratification Weights in Stata
+#Post-Stratification Weights
 If you know the population values of demographics that you wish to weight on, you can create the weights yourself using an approach known as post-stratification raking. There is a user-written program in Stata to allow for the creation of such weights. The function is called `ipfweight`.
 
 As an example, we will use the [2014 Massachusetts Exit Poll data](http://people.umass.edu/schaffne/mass_exitpoll_2014.dta). The dataset already has a sampling weight included, to adjust for the stratified cluster sample approach taken. However, because of unequal response rates among different demographic groups, we also need to do additional post-stratification weighting. Here is what we know about the demographic composition of the electorate in 2014 according to voting records:
@@ -259,7 +223,7 @@ Now, we can use the `ipfweight` command to weight to the population values. To d
 ipfweight female white black hispanic age18_29 age65_over, gen(weight) val(47 53 12 88 96 4 95 5 93 7 70 30) maxit(25) st(sampleweight)
 ```
 
-This command first identifies the variables on which to weight (`female white black hispanic age18_29 age65_over`). The `gen()` option specifies the name of the weight variable that will be created after this command is executed (I'm just calling it ``weight'' here). The `val()` option is necessary. This part of the command specifies the point estimate for each category of the variables specified earlier. So, for example, the first two numbers are 47 and 53, because on the variable female, we are looking for 47% to be 0 (male) and 53% to be 1 (female). The next two numbers are 12 and 88, because we are looking for 12% to take on a 0 for the white variable (indicating non-white) and 88% to take on a value of 1 (indicating white). And so on...
+This command first identifies the variables on which to weight (`female white black hispanic age18_29 age65_over`). The `gen()` option specifies the name of the weight variable that will be created after this command is executed (I'm just calling it `weight` here). The `val()` option is necessary. This part of the command specifies the point estimate for each category of the variables specified earlier. So, for example, the first two numbers are 47 and 53, because on the variable female, we are looking for 47% to be 0 (male) and 53% to be 1 (female). The next two numbers are 12 and 88, because we are looking for 12% to take on a 0 for the white variable (indicating non-white) and 88% to take on a value of 1 (indicating white). And so on...
 
 The `st()` option is used to indicating the starting weight for each observation. You will often not have a starting weight like this, but here we do because the sample is already weighted to account for the stratified cluster sample (captured by the `sampleweight` variable). Finally, `maxit` is simply the maximum number of times that Stata will go through the raking process. It probably makes sense to set this at least to 10, but you may want to set it higher when you are weighting on more variables. 
 
@@ -271,17 +235,6 @@ ipfweight female white black hispanic age18_29 age65_over, gen(weighttrimmed) va
 
 
 #Item Scaling
-
-##Background Readings
-
-* Warshaw, Christopher. 2017. "Latent Constructs in Public Opinion." *The Oxford Handbook of Polling and Polling Methods*. DOI: 10.1093/oxfordhb/9780190213299.013.30
-
-* Edelen, Maria Orlando and Bryce B. Reeve. 2007. "Applying item response theory (IRT) modeling to questionnaire development, evaluation, and refinement." *Quality of Life Research* 16: 5 - 18.
-
-* Treier, Shawn and Simon Jackman. 2008. "Democracy as a Latent Variable." *American Journal of Political Science.* Vol. 52, No. 1, pp. 201-17.
-
-##Scaling Items in Stata
-
 In the 2010 CCES, respondents were asked to indicate whether they would support using U.S. troops to support each of the following objectives. The objectives were:
 
 Variable | Objective
@@ -302,7 +255,7 @@ recode cc414 1 cc414 2 cc414 3 cc414 4 cc414 5 cc414 6 (2=0)
 In the following sections, we examine three methods of combining these six items into a single scale measuring attitudes toward immigration policy.
 
 
-##Simple Index using `alpha`
+##Alpha
 
 We want to see whether the variables are measuring the same concept. We could do this either by creating a simple index with the `alpha` command or by creating the index using factor analysis. 
 
@@ -323,8 +276,8 @@ twoway histogram intervention, percent bc(blue)
 
 This can simply be interpreted as the proportion of times that respondents supported military intervention. Note that very few supported all reasons for an intervention, and the mode was .5 (half of the situations). 
 
-##Index using Factor Analysis `factor`
-Alpha essentially creates a simple addititve index. But a second way to combine these variables is through a factor analysis. Factor analysis potentially provides more information because it allows some items to have more influence over the latent (index) variable than others. To run a factor analysis use the `factor` command:
+##Factor Analysis
+Alpha essentially creates a simple additive index. But a second way to combine these variables is through a factor analysis. Factor analysis potentially provides more information because it allows some items to have more influence over the latent (index) variable than others. To run a factor analysis use the `factor` command:
 
 ```
 factor cc414_1 cc414_2 cc414_3 cc414_4 cc414_5 cc414_6
@@ -361,7 +314,7 @@ twoway scatter intervention intervention2, aspect(1) ytitle("Alpha created measu
 
 ![](~/Box Sync/CCES RA/bookdown-stata/Images/alpha_factor_scatter.png)
 
-##Using IRT to Create a Scale
+##IRT
 Item response theory (IRT) is another approach to scaling indicators, with its foundations coming from research on testing. Unlike factor analysis, the IRT approach assumes that the items are capturing a single underlying latent variable. IRT is also specifically designed for binary or categorical items. Like factor analysis, IRT allows for some variables to contribute more to determining that latent variable. 
 
 Stata 14 includes a family of IRT approaches. The approach we will use here (2 parameter logit - `2pl`) is designed for binary items and allows for each item to contribute differently to the construction of the underlying latent variable. 
@@ -397,15 +350,7 @@ And just for fun, let's see how this compares to the latent variable created thr
 
 These are highly correlated (at .996), so at least in this case, it would not have mattered much if you had used IRT or factor analysis. 
 
-#Matching and Balancing Techniques
-
-##Background Readings
-
-* Blackwell, Matthew, Stefano Iacus, Gary King, Giuseppe Porro. 2009. "cem: Coarsened exact matching in Stata." *Stata Journal.* Vol. 4, pp. 534-546.
-
-* Hainmueller, Jens and Yiqing Xi. 2013. "ebalance: A Stata Package for Entropy Balancing." *Journal of Statistical Software.* Vol. 54, Issue 7.
-
-##Two Approaches to Matching/Balancing in Stata
+#Matching and Balancing
 Let's imagine that we want to know whether having children makes an individual more likely to support the Children's Health Insurance policy (variable `cc332b`). We could simply do a cross-tabulation of having children and support for the policy. In a set-up like this one, we are essentially treating having a child as the treatment and one's opinion on the insurance program is the outcome variable. 
 
 ```
@@ -523,24 +468,15 @@ Using these new entropy balancing weights changes the results only marginally:
 
 ![](~/Box Sync/CCES RA/bookdown-stata/Images/ebalancereg2.png)
 
-#Construction and Analysis of Panel Data
-
-##Background Readings
-* Schaffner, Brian F. and Stephen Ansolabehere. "Guide to the 2010-14 CCES Panel Study." http://dx.doi.org/10.7910/DVN/TOE8I1
-
-* Prior, Markus. 2010. "You’ve Either Got It or You Don’t? The Stability of Political Interest over the Life Cycle." *Journal of Politics.* Vol. 72, No. 3, pp. 747-766.
-
-* Hillygus, D. Sunshine and Steven A. Snell. 2015. "Longitudinal Surveys: Issues and Opportunities."
-
-##Analyzing Panel Data in Stata
-We will use the 2010-2014 CCES Panel Data as an example to demonstrate some panel analysis techniques. You may download the survey from here: http://dx.doi.org/10.7910/DVN/TOE8I1
+#Panel Data
+We will use the 2010-2014 CCES Panel Data as an example to demonstrate some panel analysis techniques. You may download the survey from [here](http://dx.doi.org/10.7910/DVN/TOE8I1).
 
 ##Reshaping Data
 The CCES data comes in "wide" format. That means that each row is an individual and their responses for each year of the survey are recorded across the dataset in columns. For example, the variable `CC10_308a` is the individual's approval of President Obama in 2010, `CC12_308a` is the approval of Obama in 2012, and `CC14_308a` is the value of approval for 2014. 
 
 While there may be some value to having data appear in this format, it is necessary to change to "long" format in order to conduct panel analyses in Stata. Long format means that there is a separate observation for each individual in each year. Thus, what you would end up with for this panel dataset is three observations for each respondent (2010, 2012, and 2014) with one variable for each question that was asked in each of those years. In other words,  instead of having `CC10_308a`, `CC12_308a`, and  `CC14_308a`, you would want just a single `CC_308a`. You would then have a caseid variable that is unique to each respondent, and a year variable that indicates which year each variable applies to.
 
-Once we understand some of the re-naming conventions, it is not particulalry difficult to re-shape the dataset so that it works in this form. The do-file below shows how we would do this with the wide-form panel data. The basic gist is that we would be subsetting the wide-form dataset into three different datasets...one for each wave (or year). We then rename the variables so that they will have the same variable names in each year (e.g. `CC_308a` instead of `CC10_308a`, `CC12_308a`, and `CC14_308a`). 
+Once we understand some of the re-naming conventions, it is not particulalry difficult to re-shape the dataset so that it works in this form. The do-file below shows how we would do this with the wide-form panel data. The basic gist is that we would be subsetting the wide-form dataset into three different datasets: one for each wave (or year). We then rename the variables so that they will have the same variable names in each year (e.g. `CC_308a` instead of `CC10_308a`, `CC12_308a`, and `CC14_308a`). 
 
 ![](~/Box Sync/CCES RA/bookdown-stata/Images/longform.png)
 
@@ -555,7 +491,7 @@ However, in this case we want to specify to Stata that the time periods in our a
 xtset caseid year, delta(2)
 ```
 
-##Simple Panel Analysis Commands
+##Panel Analysis
 Now that we have `xtset` the data, we can use the entire body of `xt` commands in Stata. To see what these include, you can type `help xt` into the command line in Stata. Note that most common regression models are avaiable in xt format (e.g. `xtreg`, `xtlogit`, `xtologit`, and so on). 
 
 Let's say that we are interested in understanding whether people punish or reward the president for their own employment situation. In other words, we want to see whether the act of getting a job (or losing a job) affects how people evaluated President Obama during his term in office. The dependent variable we will use here is a question asking how much people approve of Obama (`CC308a`). Our key independent variable will be whether an individual states that they are employed full-time or unemployed (we will exclude other employment responses from this analysis). 
@@ -599,25 +535,8 @@ xtreg obama_approval employed, fe
 The `, fe` options specifies a fixed effects model. Essentially, we are controlling for any time-invariant differences across individuals by taking this approach. The information being used to determine the effect of employment status on approval is only for individuals whose employment status changed at some point during the 3 waves. Based on this approach, employment status appears to be unrelated to approval for Obama (based on the coefficient for the employed variable). 
 
 #Survey Experiments
-In this section of the course we will learn about the strengths and weaknesses of survey experiments. We will then learn best practices for designing and analyzing such experiments.
+In this section we will learn about the strengths and weaknesses of survey experiments. We will then learn best practices for designing and analyzing such experiments.
 
-##Background Readings
-
-* Druckman et al. 2011. *Cambridge Handbook of Experimental Political Science.* Chapters 2-3. 
-
-* Gaines, Brian J., James H. Kuklinski, and Paul J. Quirk. "The Logic of the Survey Experiment Reexamined." *Political Analysis.* 15, no. 1 (2007): 1-20.
-
-* Barabas, Jason, and Jennifer Jerit. "Are Survey Experiments Externally Valid?" *American Political Science Review.* 104, no. 02 (2010): 226-242.
-
-* Berinsky, Adam J., Michele F. Margolis, and Michael W. Sances. 2014. "Separating the Shirkers from the Workers? Making Sure Respondents Pay Attention on Self-Administered Surveys." *American Journal of Political Science.* Vol. 58, No. 3, pp 739-753.
-
-* Albertson, Bethany and Shana Kushner Gadarian. 2016. "Did that Scare You? Tips on Creating Emotion in Experimental Subjects." *Political Analysis.* 
-
-* Hainmueller, J., Hangartner, D., and Yamamoto, T. 2015. "Validating Vignette and Conjoint Survey Experiments Against Real-World Behavior?" *Proceedings of the National Academy of Sciences.*
-
-* Montgomery, Jacob M., Brendan Nyhan, and Michelle Torres. 2017. "How conditioning on post-treatment variables can ruin your experiment and what to do about it." Working Paper. http://www.dartmouth.edu/~nyhan/post-treatment-bias.pdf
-
-##Analyzing and Presenting Results from Survey Experiments
 The great thing about running an experiment is that analyzing the results is often pretty straightforward. I have a couple of basic "go-to" routines to present basic experimental treatment effects, which I'll outline here. Of course, things can get increasingly complicated with experiments that have lots of conditions or other features, but this will get you started. 
 
 Here is a description of the experiment we'll analyze here. It is a brief vignette, with random assignment of whether respondents received some kind of additional information about the candidate:

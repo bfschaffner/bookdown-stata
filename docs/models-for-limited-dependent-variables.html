@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Survey Data Analysis &amp; Survey Experiments</title>
+  <meta name="description" content="Advanced Survey Data Analysis &amp; Survey Experiments">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="davidjbarney/bookdown-stata" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  
+  
+  
+
+<meta name="author" content="Brian F. Schaffner">
+
+
+<meta name="date" content="2018-03-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="sampling.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced Survey Data Analysis & Survey Experiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html"><i class="fa fa-check"></i><b>2</b> Models for Limited Dependent Variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#logit"><i class="fa fa-check"></i><b>2.1</b> Logit</a></li>
+<li class="chapter" data-level="2.2" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#ordinal-logit"><i class="fa fa-check"></i><b>2.2</b> Ordinal Logit</a></li>
+<li class="chapter" data-level="2.3" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#multinomial-logit"><i class="fa fa-check"></i><b>2.3</b> Multinomial Logit</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>3</b> Sampling</a></li>
+<li class="chapter" data-level="4" data-path="design-weights.html"><a href="design-weights.html"><i class="fa fa-check"></i><b>4</b> Design Weights</a></li>
+<li class="chapter" data-level="5" data-path="post-stratification-weights.html"><a href="post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Post-Stratification Weights</a></li>
+<li class="chapter" data-level="6" data-path="item-scaling.html"><a href="item-scaling.html"><i class="fa fa-check"></i><b>6</b> Item Scaling</a><ul>
+<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#alpha"><i class="fa fa-check"></i><b>6.1</b> Alpha</a></li>
+<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#factor-analysis"><i class="fa fa-check"></i><b>6.2</b> Factor Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#irt"><i class="fa fa-check"></i><b>6.3</b> IRT</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing</a><ul>
+<li class="chapter" data-level="7.1" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.1</b> Coarsened Exact Matching</a></li>
+<li class="chapter" data-level="7.2" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html#entropy-balancing"><i class="fa fa-check"></i><b>7.2</b> Entropy Balancing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="panel-data.html"><a href="panel-data.html"><i class="fa fa-check"></i><b>8</b> Panel Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="panel-data.html"><a href="panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.1</b> Reshaping Data</a></li>
+<li class="chapter" data-level="8.2" data-path="panel-data.html"><a href="panel-data.html#panel-analysis"><i class="fa fa-check"></i><b>8.2</b> Panel Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Survey Data Analysis &amp; Survey Experiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="models-for-limited-dependent-variables" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Models for Limited Dependent Variables</h1>
+<div id="logit" class="section level2">
+<h2><span class="header-section-number">2.1</span> Logit</h2>
+<p>Open the 2008 Cooperative Congressional Election Study dataset and recode some of the variables so that they will be appropriately coded:</p>
+<pre><code>use http://people.umass.edu/schaffne/cces08.dta
+recode cc316c 2=0 3=., gen(stemcell)
+recode cc307 2=-1 3=0 4/5=., gen(pid)
+recode v243 6=., gen(ideology)
+ren v213 education</code></pre>
+<p>The <code>logit</code> command in Stata works similarly to the <code>regress</code> command. You begin your line with <code>logit</code> and then list the dependent variable followed by your independent variables. An alternative to <code>logit</code> is <code>probit</code>, which works similarly, but assumes a different variance.</p>
+<pre><code>logit stemcell pid ideology education</code></pre>
+<div class="figure">
+<img src="Images/logit1.png" />
+
+</div>
+<p>It is important to keep in mind that the coefficients are not easily interpreted in the way that OLS coefficients are. You can ask Stata to give you odds ratios instead of coefficients by adding <code>, or</code> to the end of your logit command.</p>
+<pre><code>logit stemcell pid ideology education, or</code></pre>
+<div class="figure">
+<img src="Images/logit2.png" />
+
+</div>
+<p>You can interpret the odds ratios a bit more easily. For example, you could interpret the odds ratio on education to mean that for each additional unit increase on the scale education, an individual’s odds of supporting stem cell research are 1.16 times greater. Or, perhaps slightly more intuitively, for each additional education category, an individual’s odds of supporting stem cell research increase by 16%. When you ask for odds ratios you don’t get an intercept, since the intercept doesn’t have an odds ratio.</p>
+<p>Now, let’s return to interpreting those coefficients. While odds ratios are fairly easy to calculate, they probably aren’t the best way to talk about the effects of the coefficients. More ideal and easy to understand are predicted probabilities. You can generate and plot these using the <code>margins</code> and <code>marginsplot</code> commands.</p>
+<p>First, <code>margins</code> will return a list of predicted probabilities under different conditions that you can specify. For example, if you wanted to know the probability that an individual who is “very liberal” on the ideology measure and average on the other covariates would support funding for stem cell research you could use this command:</p>
+<pre><code>margins, at(ideology=1)  atmeans</code></pre>
+<div class="figure">
+<img src="Images/logit3.png" />
+
+</div>
+<p>Note that there is a .98 probability that this individual would support funding for stem cell research. Also note that the command gives you a 95% confidence interval for that prediction.</p>
+<p>Now what if you want to plot the predicted probabilities across all values of ideology? To do this, you first need to ask for those probabilities using the margins command. Then you can follow that up with the marginsplot command to graph them.</p>
+<pre><code>margins, at(ideology=(1(1)5))  atmeans</code></pre>
+<p>Note that the command above asks for predictions of support for stem cell research at every value between 1 and 5 in 1 point increments (this is the clause <code>ideology=(1(1)5)</code>).</p>
+<div class="figure">
+<img src="Images/logit4.png" />
+
+</div>
+<p>Now, you can use the <code>marginsplot</code> command to plot these predicted probabilities…</p>
+<pre><code>marginsplot</code></pre>
+<div class="figure">
+<img src="Images/logitgraph1.png" />
+
+</div>
+<p>And now if we want to clean this graph up a bit, we can do that by adding some options to re-name the axis and graph titles:</p>
+<pre><code>marginsplot, ytitle(&quot;Prob. of supporting funding for stem cell research&quot;) xtitle(&quot;Ideology&quot;) title(&quot;Effect of Ideology on Stem Cell Support&quot;)</code></pre>
+<div class="figure">
+<img src="/Users/davidbarney/Box%20Sync/CCES%20RA/Online%20Survey%20Packet/Images/logitgraph2.png" />
+
+</div>
+</div>
+<div id="ordinal-logit" class="section level2">
+<h2><span class="header-section-number">2.2</span> Ordinal Logit</h2>
+<p>An ordinal logit model is used when you have a dependent variable that takes on more than two categories and those categories are ordered. For example, Likert scales, common in survey research, are ordered dependent variables.</p>
+<p>The command to estimate an ordinal logit model in Stata is <code>ologit</code>.</p>
+<p>In the 2008 CCES dataset, there is a question asking respondents their views on Affirmative Action policies (<code>cc313</code>). Respondents can indicate their support for such policies on a four point scale, ranging from 1 (“Strongly support”) to 4 (“Strongly oppose”). One could collapse these categories into “support” or “oppose,” but why throw away detail about the strength of support?</p>
+<p>To estimate an ordinal logit model on this question, you could use the following command:</p>
+<pre><code>ologit cc313 ideology pid education</code></pre>
+<div class="figure">
+<img src="Images/ologit1.png" />
+
+</div>
+<p>The coefficients in this output are estimating the effect of a one unit increase in each independent variable on the log odds of moving to a higher category on the scale of the dependent variable. These can be converted to odds ratios using the same <code>or</code> option noted above.</p>
+<p>Predicted probablities can be created using the <code>marginsplot</code> command. Following the process outlined below for <code>mlogit</code> will work with <code>ologit</code> as well (to create predicted probabilities for each outcome category).</p>
+</div>
+<div id="multinomial-logit" class="section level2">
+<h2><span class="header-section-number">2.3</span> Multinomial Logit</h2>
+<p>For cases when the dependent variable has unordered categories, we use multinomial logit. In Stata, you would use the <code>mlogit</code> command to implement this type of model. Let’s use variable <code>cc309</code> as our dependent variable. That variable asks respondents what they would most want to do to balance the federal budget – cut defense spending (1), cut domestic spending (2), or raise taxes (3). Let’s use the same set of independent variables.</p>
+<pre><code>mlogit cc309 ideology pid education</code></pre>
+<div class="figure">
+<img src="Images/mlogit1.png" />
+
+</div>
+<p>Each coefficient and statistical test above is calculated in relation to the base category (cut domestic spending). So, the coefficients are telling you whether a coefficient means there is a significant difference between the odds of choosing the category relative to the base category, but not whether there is a significant difference across other categories.</p>
+<p>As with the logit model, you can again create predicted probabilities and plots to help look at the size of the effects.</p>
+<pre><code>margins, at(ideology=(1(1)5)) atmeans
+marginsplot, ytitle(&quot;Probability&quot;&quot;) xtitle(&quot;Ideology&quot;&quot;) </code></pre>
+<div class="figure">
+<img src="Images/mlogit.png" />
+
+</div>
+<p>Let’s clean this up a bit to make things clearer. In particular, let’s label the legend better by adding an option to label each key in the legend. I’m also going to get rid of the title by specifying a blank title:</p>
+<pre><code>marginsplot, ytitle(&quot;Probability&quot;&quot;) xtitle(&quot;Ideology&quot;) title(&quot;&quot;)  legend(order(1 &quot;Cut defense&quot;&quot; 2 &quot;Cut domestic&quot;&quot; 3 &quot;Raise taxes&quot;&quot;)) </code></pre>
+<div class="figure">
+<img src="Images/mlogit2.png" />
+
+</div>
+<p>The graphic shows that most of the effect of ideology occurs in choosing between the “cut defense” and “cut domestic” categories. Almost everyone, regardless of ideology, prefers to not raise taxes.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sampling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

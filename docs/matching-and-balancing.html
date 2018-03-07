@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Survey Data Analysis &amp; Survey Experiments</title>
+  <meta name="description" content="Advanced Survey Data Analysis &amp; Survey Experiments">
+  <meta name="generator" content="bookdown 0.6 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="davidjbarney/bookdown-stata" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Survey Data Analysis &amp; Survey Experiments" />
+  
+  
+  
+
+<meta name="author" content="Brian F. Schaffner">
+
+
+<meta name="date" content="2018-03-07">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="item-scaling.html">
+<link rel="next" href="panel-data.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced Survey Data Analysis & Survey Experiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html"><i class="fa fa-check"></i><b>2</b> Models for Limited Dependent Variables</a><ul>
+<li class="chapter" data-level="2.1" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#logit"><i class="fa fa-check"></i><b>2.1</b> Logit</a></li>
+<li class="chapter" data-level="2.2" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#ordinal-logit"><i class="fa fa-check"></i><b>2.2</b> Ordinal Logit</a></li>
+<li class="chapter" data-level="2.3" data-path="models-for-limited-dependent-variables.html"><a href="models-for-limited-dependent-variables.html#multinomial-logit"><i class="fa fa-check"></i><b>2.3</b> Multinomial Logit</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>3</b> Sampling</a></li>
+<li class="chapter" data-level="4" data-path="design-weights.html"><a href="design-weights.html"><i class="fa fa-check"></i><b>4</b> Design Weights</a></li>
+<li class="chapter" data-level="5" data-path="post-stratification-weights.html"><a href="post-stratification-weights.html"><i class="fa fa-check"></i><b>5</b> Post-Stratification Weights</a></li>
+<li class="chapter" data-level="6" data-path="item-scaling.html"><a href="item-scaling.html"><i class="fa fa-check"></i><b>6</b> Item Scaling</a><ul>
+<li class="chapter" data-level="6.1" data-path="item-scaling.html"><a href="item-scaling.html#alpha"><i class="fa fa-check"></i><b>6.1</b> Alpha</a></li>
+<li class="chapter" data-level="6.2" data-path="item-scaling.html"><a href="item-scaling.html#factor-analysis"><i class="fa fa-check"></i><b>6.2</b> Factor Analysis</a></li>
+<li class="chapter" data-level="6.3" data-path="item-scaling.html"><a href="item-scaling.html#irt"><i class="fa fa-check"></i><b>6.3</b> IRT</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html"><i class="fa fa-check"></i><b>7</b> Matching and Balancing</a><ul>
+<li class="chapter" data-level="7.1" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html#coarsened-exact-matching"><i class="fa fa-check"></i><b>7.1</b> Coarsened Exact Matching</a></li>
+<li class="chapter" data-level="7.2" data-path="matching-and-balancing.html"><a href="matching-and-balancing.html#entropy-balancing"><i class="fa fa-check"></i><b>7.2</b> Entropy Balancing</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="panel-data.html"><a href="panel-data.html"><i class="fa fa-check"></i><b>8</b> Panel Data</a><ul>
+<li class="chapter" data-level="8.1" data-path="panel-data.html"><a href="panel-data.html#reshaping-data"><i class="fa fa-check"></i><b>8.1</b> Reshaping Data</a></li>
+<li class="chapter" data-level="8.2" data-path="panel-data.html"><a href="panel-data.html#panel-analysis"><i class="fa fa-check"></i><b>8.2</b> Panel Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="survey-experiments.html"><a href="survey-experiments.html"><i class="fa fa-check"></i><b>9</b> Survey Experiments</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Survey Data Analysis &amp; Survey Experiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="matching-and-balancing" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Matching and Balancing</h1>
+<p>Let’s imagine that we want to know whether having children makes an individual more likely to support the Children’s Health Insurance policy (variable <code>cc332b</code>). We could simply do a cross-tabulation of having children and support for the policy. In a set-up like this one, we are essentially treating having a child as the treatment and one’s opinion on the insurance program is the outcome variable.</p>
+<pre><code>svy: tab cc332b v242, col</code></pre>
+<div class="figure">
+<img src="Images/match1.png" />
+
+</div>
+<p>Based on this simple bivariate analysis, it appears as though inviduals who have children are about 5 points more supportive of the children’s insurance program (p&lt;.001). But, of course, having children is not randomly assigned, so there may be many ways in which those with children are different from those without them, and we would want to be sure to account for these factors when making this comparison. We would want to account for as many of those factors as possible when making this comparison.</p>
+<p>We will attempt to account for the following variables:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variable Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>v207</td>
+<td>Year of birth</td>
+</tr>
+<tr class="even">
+<td>v244</td>
+<td>Interest in news and public affairs</td>
+</tr>
+<tr class="odd">
+<td>v211</td>
+<td>Race</td>
+</tr>
+</tbody>
+</table>
+<p>Of course, it is possible (and probably desirable) to match/balance on far more variables than this, but for the sake of this particular exercise, these three variables will suffice.</p>
+<div id="coarsened-exact-matching" class="section level2">
+<h2><span class="header-section-number">7.1</span> Coarsened Exact Matching</h2>
+<p>Coarsened exact matching is a method that essentially seeks to find observations in the “control” and “treatment” groups that are close or exact matches on the variables you specify. So, in this case, we are looking to pair individuals who do and do not have children based on their year of birth, interest in news, and race.</p>
+<p>Note that you will need to install the program for this by typing:</p>
+<pre><code>ssc install cem</code></pre>
+<p>Then follow the links to make sure the <code>cem</code> module is installed on your Stata.</p>
+<p>Now, before we begin, we should work to recode the variables that we are going to use in this analysis.</p>
+<pre><code>recode cc332b 2=0, gen(chip)
+recode v242 2=0, gen(kids)
+recode v244 7=4, gen(interest)
+recode v211 2/9=0, gen(white)</code></pre>
+<p>Now, we have one interval variable (year of birth) and two categorical variables that we wish to match on. Because our sample size is so large, we can force <code>cem</code> to exact match on the categorical variables (white and interest). Then we will coarsen exact match on year of birth. The variable kids is our indicator of the treatment. Note that the treatment can only take on two values. If you have multiple treatments, then things become a bit more complicated.</p>
+<p>To avoid an error message, drop any cases on which you do not have a value for the treatment variable:</p>
+<pre><code>drop if kids==.</code></pre>
+<p>Before we do the matching, let’s take a look at just how imbalanced our control and treatment groups are. We can do this by using the <code>imb</code> command:</p>
+<pre><code>imb white interest v207, treatment(kids)</code></pre>
+<div class="figure">
+<img src="Images/imb.png" />
+
+</div>
+<p>The main statistic to look at here is the L1 value. The L1 statistic takes on values ranging from 0 to 1, indicating the degree of imbalance on the variables specified. We will keep this value of L1 in mind to see how much we can reduce the imbalance by matching.</p>
+<p>Now go ahead and conduct the matching:</p>
+<pre><code>cem white (#0) interest (#0) v207, treatment(kids)</code></pre>
+<div class="figure">
+<img src="Images/cem.png" />
+
+</div>
+<p>Note that the L1 statistic is now just .09. So we have brought it very close to 0, and far away from the the degree of imbalance we had before matching. We can also see that we were able to find a match for most cases in our data (only 184 unmatched cases). Note that L1 is smallest for the two variables on which we did exact matching (white and interest).</p>
+<p>After conducting the <code>cem</code>, we now have three new variables in our dataset. <code>cem_matched</code> is simply an indicator of which cases were matched versus unmatched. The most important variable is <code>cem_weights</code>. Unless you chose to do a <code>k2k</code> match, it will be crucial to use the weights in your analyses. However, you must use these as <code>iweight</code>s. So, now let’s examine the effect of having kids both before matching and after matching:</p>
+<pre><code>reg chip kids</code></pre>
+<div class="figure">
+<img src="Images/cemreg1.png" />
+
+</div>
+<pre><code>reg chip kids [iw=cem_weights]</code></pre>
+<div class="figure">
+<img src="Images/cemreg2.png" />
+
+</div>
+<p>The second solution is the one that incorporates the matching, through the implementation of the weights. Note that the statistically significant difference of 5.6 points observed before matching vanishes once we do the matching. In that analysis, there is a very small and statistically indistinguishable difference between those who do and do not have kids when it comes to attitudes towards the children’s health insurance policy.</p>
+<p>The weights created by <code>cem</code> are to provide the most efficient use of the data possible by using as many observations as possible. However, if you have a large number of observations and wish to simplify your analysis, you can to <code>k2k</code> matching, which means pairs will be created so that for each individual in the control group there is just one match in the treatment group (and vice versa). To do this, simply add the <code>k2k</code> option after the comma in the <code>cem</code> command. And then, limit your subsequent analyses only to those who are identified as having a match by the <code>cem_matched</code> variable:</p>
+<pre><code>cem white (#0) interest (#0) v207, treatment(kids) k2k
+reg chip kids if cem_matched==1</code></pre>
+<div class="figure">
+<img src="Images/cemreg3.png" />
+
+</div>
+</div>
+<div id="entropy-balancing" class="section level2">
+<h2><span class="header-section-number">7.2</span> Entropy Balancing</h2>
+<p>Entropy balancing is an alternative approach to producing balance between the treatment and control groups. This is done by weighting the observations to produce balance on the variables specified. If we wanted to balance the control and treatment groups using <code>ebalance</code>, we would type the following:</p>
+<pre><code>ebalance kids white interest v207</code></pre>
+<p>Note that the treatment variable must come first, after the <code>ebalance</code> command. Then you include the co-variates on which you wish to balance. This produces the following output: <img src="Images/ebalance.png" /></p>
+<p>This output confirms which variable is being used as the treatment and which variables are being used to balance. It then shows summary information about the variables in the treatment and control conditions before and after the new weights are applied.</p>
+<p>This command produces a new variable in your dataset called <code>_webal</code>. You can now use this variable just as you would any other weight variable. So, let’s run the analysis from above, but this time using the weights from entropy balancing:</p>
+<pre><code>svyset [pw=_webal]
+svy: reg chip kids</code></pre>
+<div class="figure">
+<img src="Images/ebalancereg.png" />
+
+</div>
+<p>Again, the conclusion derived from this analysis is that having children has no impact on one’s attitude toward the children’s health insurance program.</p>
+<p>One final option to note about <code>ebalance</code> is the ability to account for the fact that your data may already be weighted to account for sampling design or response bias. The option is <code>basew</code>, and for the analysis above, you would specify it as so:</p>
+<pre><code>ebalance kids white interest v207, basew(v101)</code></pre>
+<p>Using these new entropy balancing weights changes the results only marginally:</p>
+<div class="figure">
+<img src="Images/ebalancereg2.png" />
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="item-scaling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="panel-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

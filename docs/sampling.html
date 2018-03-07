@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="panel-data.html">
-
+<link rel="prev" href="models-for-limited-dependent-variables.html">
+<link rel="next" href="design-weights.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -109,69 +109,28 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="survey-experiments" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Survey Experiments</h1>
-<p>In this section we will learn about the strengths and weaknesses of survey experiments. We will then learn best practices for designing and analyzing such experiments.</p>
-<p>The great thing about running an experiment is that analyzing the results is often pretty straightforward. I have a couple of basic “go-to” routines to present basic experimental treatment effects, which I’ll outline here. Of course, things can get increasingly complicated with experiments that have lots of conditions or other features, but this will get you started.</p>
-<p>Here is a description of the experiment we’ll analyze here. It is a brief vignette, with random assignment of whether respondents received some kind of additional information about the candidate:</p>
-<blockquote>
-<p>In Illinois, Democrat David Gill is running for a seat in the U.S. House of Representatives. Gill is an ER physician who is married and has six children with his wife Elaine. [RANDOMIZED TEXT HERE] He stated that he was running for Congress, “to revive the fading American Dream and make sure DC is setting the right priorities for our families again.”</p>
-</blockquote>
-<p>Randomized text (with equal probability):</p>
-<ul>
-<li>No additional text (control condition).</li>
-<li>Gill was endorsed by the National Organization for Women.</li>
-<li>Gill was endorsed by the National Organization for Women because of his pro-choice views.</li>
-</ul>
-<p><strong>UMA311:</strong> Based on what you have heard, where would you place Gill on the ideological scale?</p>
-<ol style="list-style-type: decimal">
-<li>Very liberal</li>
-<li>Liberal</li>
-<li>Somewhat liberal</li>
-<li>Moderate</li>
-<li>Somewhat conservative</li>
-<li>Conservative</li>
-<li>Very Conservative</li>
-</ol>
-<p>The data to analyze this data can be accessed <a href="http://people.umass.edu/schaffne/endorsement_experiment.dta">here.</a></p>
-<p>Essentially, the idea was to see whether an endorsement from the National Organization for Women would change how liberal or conservative people thought the candidate was. So our key dependent variable is <code>UMA311</code> – where respondents placed Gill on the 7-point ideological scale. And we want to see whether this varies across our three conditions (the control and 2 treatment conditions). A common way that people sometimes plot these things is just to show the overall level of the dependent variable for each condition. Something like this:</p>
-<pre><code>graph bar UMA311, over(condition)</code></pre>
-<p>Of course, there are several problems with this particular graph. One is that we don’t have any uncertainty estimates for these figures (e.g. confidence intervals). We could recover this information by using a very basic regress command and then using marginsplot as so:</p>
-<pre><code>reg UMA311 i.condition
-margins, over(condition)
-marginsplot, recast(bar) xlabel(, angle(45)) title(&quot; &quot;) ytitle(&quot;Conservatism&quot;) xtitle(&quot; &quot;)</code></pre>
-<div class="figure">
-<img src="Images/exp1.png" />
+<div id="sampling" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Sampling</h1>
+<p>One can use almost any program to draw a random sample. In Stata, you could write your own basic program to sample observations, making use of Stata’s random number generator (e.g. <code>gen random=runiform()</code>). However, there is also a useful packaged program that streamlines the process for you and makes it easier to do sampling proportional to size – <code>samplepps</code>.</p>
+<p>Let’s start by opening a dataset that is a list of most of the local communities (towns and cities) in the United States.</p>
+<pre><code>use http://people.umass.edu/schaffne/communities.dta</code></pre>
+<p>Now, let’s say that we wanted to use these communities to conduct a cluster sample. In essence, we want to select 100 communities (the idea is that we would then travel to those communities and randomly select households to interview). <code>samplepps</code> is specifically designed to conduct sampling proportional to size. In this case, we have the population of each community as one of the variables in our dataset (variable name: <code>population</code>). So, to take our sample of 100 communities, we could do the following:</p>
+<pre><code>samplepps insample, ncases(100) size(population)</code></pre>
+<p>This creates a new variable called <code>insample</code> which equals 1 if the observation in the dataset was selected into your sample (so there should be 100 cases with 1s).</p>
+<p>But what if you don’t want to sample proportional to the size of the community. That is, what if you want each community to have an equal chance of being selected. Well, this is easy enough; you just have to trick <code>samplepps</code> by giving all the cases in your dataset the same size. So you could simply do this:</p>
+<pre><code>gen size=1
 
-</div>
-<p>So this is a little better, and we could further play with this graph to clean this up. But it still isn’t as informative as we might prefer. In particular, what we really want here are the treatment effects. That is, the difference between the treatment condition(s) and the control condition. This graphic makes it so we have to figure that out for ourselves. So, a better approach would be to essentially produce a coefficient plot. There are a couple of ways to do this in Stata (including the <code>margins</code> command), but the easiest is to use the <code>coefplot</code> package.</p>
-<pre><code>reg UMA311 i.condition
-coefplot, drop(_cons) xline(0) plotr(lc(none)) xlabel(-1.5 -1 -.5 0 .5)</code></pre>
-<p>A few points here. First, I use the <code>drop(_cons)</code> option to omit the plotting of the intercept. That is pretty much irrelevant to understanding the treatment effects and it is confusing to have it in the same plot.</p>
-<p>I like plotting a line at 0 (<code>xline(0)</code>) as a reference. If a treatment effect is significant, then the confidence interval for that effect should not overlap with the zero line. That is what we see here. This also gives us a better sense of the size of the treatment effects. The endorsement with no explanation moves peoples’ estimates of Gill’s ideology a full point more liberal, whereas the endorsement with the explanation only has an effect that is about half has large. Note that I had to use the <code>xlabel(-1.5 -1 -.5 0 .5)</code> option so that the reference line would show up since the default range for this particular plot would not include zero otherwise.</p>
-<div class="figure">
-<img src="Images/exp2.png" />
-
-</div>
-<p>Finally, what if we want to see whether our treatment effects are heterogeneous by some other variable in our model? Well, the easiest thing to do is to estimate separate regression models and combine them into a single plot. In the code below, I estimate treatment effects for men, store the results, then for women (and store those results), and then use <code>coefplot</code> to bring in the results for both men and women into a single plot.</p>
-<pre><code>reg UMA311 i.condition if gender==0
-est store men
-reg UMA311 i.condition if gender==1
-est store women
-coefplot men women, drop( cons) xline(0) xlabel(-1.5 -1 -.5 0 .5)</code></pre>
-<div class="figure">
-<img src="Images/exp3.png" />
-
-</div>
-
+samplepps insample2, ncases(100) size(size)</code></pre>
+<p>Now, if you want to see the impact of sampling proportional to size versus just taking a random sample where all communities have an equal chance of being selected, check out the average population size for the communities who have a 1 for <code>insample</code> compared to those who have a 1 for <code>insample2</code>. The latter communities have much smaller populations, of course.</p>
+<p>Finally, it is worth noting that you can use <code>if</code> commands with <code>samplepps</code>, and this can come in handy if you want to do stratified sampling. For example, in this dataset, some regions have many more communities than others. But you could use the <code>if</code> command to sample within each region (one region at a time).</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="panel-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="models-for-limited-dependent-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="design-weights.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
