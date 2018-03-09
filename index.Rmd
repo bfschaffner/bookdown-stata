@@ -34,7 +34,7 @@ The `logit` command in Stata works similarly to the `regress` command. You begin
 logit stemcell pid ideology education
 ```
 
-![](~/Box Sync/CCES RA/bookdown-stata/Images/logit1.png) 
+![](~/Images/logit1.png) 
 
 It is important to keep in mind that the coefficients are not easily interpreted in the way that OLS coefficients are. You can ask Stata to give you odds ratios instead of coefficients by adding `, or` to the end of your logit command. 
 
