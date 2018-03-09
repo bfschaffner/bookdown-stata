@@ -1,5 +1,5 @@
 --- 
-title: "Advanced Survey Data Analysis & Survey Experiments"
+title: "Survey Data Analysis in Stata"
 author: "Brian F. Schaffner"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
