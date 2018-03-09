@@ -13,7 +13,7 @@ github-repo: bfschaffner/bookdown-stata
 # Introduction
 This website details various aspects of advanced survey design and analysis using cross-sectional, panel, and experimental data. Most of the examples here will utilize data from the Cooperative Congressional Election Study, a large-scale survey of Americans that has been conducted annually since 2005. 
 
-The tutorials included here make use of the Stata statistical software. However, there is a parallel packet available for R users available in PDF form which can be found online [here](http://www.miacosta.com/blog).
+The tutorials included here make use of the Stata statistical software (Stata 14). However, there is a parallel packet available for R users available in PDF form which can be found online [here](http://www.miacosta.com/blog).
 
 # Models for Limited Dependent Variables
 
